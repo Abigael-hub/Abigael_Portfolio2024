@@ -1,76 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abigael | Data Analyst Portfolio</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
-    nav {
-      background: #0a0a23;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      gap: 2rem;
-      margin: 0;
-      padding: 0;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    section {
-      padding: 4rem 1rem;
-      max-width: 960px;
-      margin: auto;
-    }
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .tool-icons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    footer {
-      background: #0a0a23;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Abigael | Data Analyst Portfolio</title>
+<style>
+  /* Place all CSS from style.css here (copy-paste from above) */
+  /* ... */
+  /* For brevity, I will add a small snippet here: */
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    background: #f9f9f9;
+    color: #222;
+  }
+  nav {
+    background: #0a0a23;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  nav li {
+    margin: 0 1rem;
+  }
+  nav a {
+    color: #ddd;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  nav a.active, nav a:hover {
+    color: #4caf50;
+    border-bottom: 2px solid #4caf50;
+  }
+  main > section {
+    display: none;
+    max-width: 720px;
+    margin: 3rem auto 6rem;
+    padding: 0 1rem;
+  }
+  main > section.active {
+    display: block;
+  }
+  footer {
+    background: #0a0a23;
+    color: #ddd;
+    text-align: center;
+    padding: 1rem;
+  }
+  .hero {
+    text-align: center;
+    padding: 8rem 2rem 6rem;
+    background: #0a0a23;
+    color: #fff;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .btn {
+    background: #4caf50;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn:hover {
+    background: #43a047;
+  }
+  ul.tool-list, ul.projects-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  ul.tool-list li, ul.projects-list li {
+    background: #fff;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+</style>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#toolset">Toolset</a></li>
-      <li><a href="#interests">Areas of Interest</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
 
-  <section id="home">
-    <h2>Hi, I’m Abigael 👋</h2>
-    <p>Data Analyst with a passion for turning data into actionable insights. Welcome to my portfolio!</p>
+<nav>
+  <ul>
+    <li><a href="#" data-section="home" class="active">Home</a></li>
+    <li><a href="#" data-section="about">About Me</a></li>
+    <li><a href="#" data-section="toolset">Toolset</a></li>
+    <li><a href="#" data-section="interests">Areas of Interest</a></li>
+    <li><a href="#" data-section="projects">Projects</a></li>
+    <li><a href="#" data-section="contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="home" class="active hero">
+    <h1>Hi, I’m Abigael 👋</h1>
+    <p>Data Analyst passionate about turning raw data into clear insights.</p>
+    <a href="#" class="btn" data-section="about">Learn More About Me</a>
   </section>
 
   <section id="about">
@@ -80,33 +123,32 @@
 
   <section id="toolset">
     <h2>Toolset</h2>
-    <div class="tool-icons">
-      <p>SQL</p>
-      <p>Python</p>
-      <p>Power BI</p>
-      <p>Excel</p>
-      <p>Tableau</p>
-      <p>Google BigQuery</p>
-      <p>Looker Studio</p>
-      <p>Jupyter</p>
-    </div>
+    <ul class="tool-list">
+      <li>SQL</li>
+      <li>Python (Pandas, NumPy)</li>
+      <li>Power BI</li>
+      <li>Excel</li>
+      <li>Tableau</li>
+      <li>Google BigQuery</li>
+      <li>Looker Studio</li>
+      <li>Jupyter Notebooks</li>
+    </ul>
   </section>
 
   <section id="interests">
     <h2>Areas of Interest</h2>
     <ul>
-      <li>Product Analytics</li>
-      <li>Financial Forecasting</li>
-      <li>Market and Consumer Research</li>
-      <li>Social Impact and Public Policy</li>
-      <li>Behavioral Data Analysis</li>
+      <li><strong>Product Analytics:</strong> Using data to improve user experience and product decisions.</li>
+      <li><strong>Financial Forecasting:</strong> Predicting trends and helping businesses plan ahead.</li>
+      <li><strong>Market and Consumer Research:</strong> Understanding customer behavior and preferences.</li>
+      <li><strong>Social Impact and Public Policy:</strong> Using data to drive meaningful change.</li>
+      <li><strong>Behavioral Data Analysis:</strong> Analyzing patterns to optimize strategies.</li>
     </ul>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <p>Here are some of the projects I've worked on. More coming soon!</p>
-    <ul>
+    <ul class="projects-list">
       <li><strong>Sales Dashboard:</strong> Built in Power BI using retail sales data. <a href="#">View</a></li>
       <li><strong>Customer Churn Model:</strong> Used Python (scikit-learn) to predict churn. <a href="#">GitHub</a></li>
       <li><strong>Financial Analysis Tool:</strong> Excel + Power BI dashboard for revenue and cost trends. <a href="#">View</a></li>
@@ -114,14 +156,46 @@
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
+    <h2>Contact Me</h2>
     <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
-    <p>GitHub: <a href="https://github.com/abigael-hub">github.com/abigael-hub</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a></p>
+    <p>GitHub: <a href="https://github.com/abigael-hub" target="_blank" rel="noopener">github.com/abigael-hub</a></p>
   </section>
+</main>
 
-  <footer>
-    <p>&copy; 2025 Abigael. Built with ❤️ using GitHub Pages.</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 Abigael. Built with ❤️ using GitHub Pages.</p>
+</footer>
+
+<script>
+  const navLinks = document.querySelectorAll('nav a[data-section]');
+  const sections = document.querySelectorAll('main > section');
+
+  function setActiveSection(sectionId) {
+    sections.forEach(sec => {
+      sec.classList.toggle('active', sec.id === sectionId);
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.dataset.section === sectionId);
+    });
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = link.dataset.section;
+      setActiveSection(target);
+      window.scrollTo(0,0);
+    });
+  });
+
+  // Also for "Learn More About Me" button on Home
+  document.querySelector('.btn[data-section]').addEventListener('click', e => {
+    e.preventDefault();
+    setActiveSection(e.target.dataset.section);
+    window.scrollTo(0,0);
+  });
+</script>
+
 </body>
 </html>
