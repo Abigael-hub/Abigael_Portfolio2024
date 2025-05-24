@@ -2,92 +2,203 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects – Selected Articles</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Obed Nyangena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+    }
+
+    header {
+      background-color: #111827;
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    .projects-section {
+      padding: 4rem 2rem;
+      background-color: #f9f9f9;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .projects-section h2 {
+      font-size: 2rem;
+      color: #1d3557;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 1rem;
+    }
+
+    .project-content h3 {
+      font-size: 1.2rem;
+      color: #1d3557;
+      margin: 0 0 0.5rem;
+    }
+
+    .project-content p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0.25rem 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      background-color: #0f1e33;
+      color: white;
+    }
+
+    footer a {
+      color: #aadfff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-  <div class="max-w-7xl mx-auto px-4 py-10">
-    <h1 class="text-3xl font-bold mb-6">Projects (Selected Articles)</h1>
-    <p class="mb-10 text-lg leading-relaxed">
-      Throughout the years, I have continued to make insightful contributions through research, scholarship, and innovation for purposes of advancing knowledge, shaping public policy debates and discourses. My Open Researcher and Contributor IDentifier (ORCID) is 
-      <a href="https://orcid.org/0000-0003-4205-6136" class="text-blue-600 underline">0000-0003-4205-6136</a>.
-      While ORCID centralizes these works by way of attribution and tracking researcher contributions and affiliations across time, disciplines, and borders, I labored to provide the same here deliberately. Some of these works include:
-    </p>
+<body>
+  <header>
+    <h1>Obed Nyangena</h1>
+    <nav>
+      <a href="index43.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="#">Toolset</a>
+      <a href="projects.html">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+  <section class="projects-section">
+    <h2>Projects (Selected Articles)</h2>
+    <div class="projects-grid">
 
-      <!-- Article 1 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="https://source.unsplash.com/featured/?cybersecurity,data" alt="Digital Risk" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-bold">Digital Fragility, Assorted Risks and Terrorism Confluence</h3>
-          <p class="text-sm text-gray-600 mb-2">With Mavia Imbali</p>
-          <p class="text-sm">Explores data privacy and global espionage. Advocates for updated legislation to combat malicious data acquisition.</p>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/featured/?cybersecurity,data" alt="Digital Risk">
+        <div class="project-content">
+          <h3>Digital Fragility, Assorted Risks and Terrorism Confluence</h3>
+          <p><strong>Co-author:</strong> Mavia Imbali</p>
+          <p>Explores data privacy and global espionage. Advocates for updated legislation to combat malicious data acquisition.</p>
         </div>
       </div>
 
-      <!-- Article 2 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="https://source.unsplash.com/featured/?vaccine,health" alt="Vaccine Research" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-bold">SARS-CoV-2 Vaccine Uptake in Kenya</h3>
-          <p class="text-sm text-gray-600 mb-2">With Bertha A. Ocholla et al.</p>
-          <p class="text-sm">Analyzes disparities in vaccine uptake using demographic and occupational data. Offers insights for health policy.</p>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/featured/?vaccine,health" alt="Vaccine Research">
+        <div class="project-content">
+          <h3>SARS-CoV-2 Vaccine Uptake in Kenya</h3>
+          <p><strong>Co-authors:</strong> Bertha A. Ocholla et al.</p>
+          <p>Analyzes disparities in vaccine uptake using demographic and occupational data. Offers insights for health policy.</p>
         </div>
       </div>
 
-      <!-- Article 3 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="https://source.unsplash.com/featured/?urbanization,emissions" alt="Climate & Urbanization" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-bold">Climate Change-Urbanization Nexus</h3>
-          <p class="text-sm text-gray-600 mb-2">With Victor Senelwa, Benson Igesa</p>
-          <p class="text-sm">Links urbanization and economic growth to carbon emissions in East Africa. Challenges passive narratives.</p>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/featured/?urbanization,emissions" alt="Climate & Urbanization">
+        <div class="project-content">
+          <h3>Climate Change-Urbanization Nexus</h3>
+          <p><strong>Co-authors:</strong> Victor Senelwa, Benson Igesa</p>
+          <p>Links urbanization and economic growth to carbon emissions in East Africa. Challenges passive narratives.</p>
         </div>
       </div>
 
-      <!-- Article 4 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="https://source.unsplash.com/featured/?weather,economy" alt="Weather Variability" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-bold">Weather Variability & Economic Growth</h3>
-          <p class="text-sm text-gray-600 mb-2">Guided by George Ruigu, PhD</p>
-          <p class="text-sm">Uses semi-parametric modeling to link weather patterns with East Africa’s growth. Urges for sustainable policy.</p>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/featured/?weather,economy" alt="Weather Variability">
+        <div class="project-content">
+          <h3>Weather Variability & Economic Growth</h3>
+          <p><strong>Supervisor:</strong> George Ruigu, PhD</p>
+          <p>Uses semi-parametric modeling to link weather patterns with East Africa’s growth. Urges for sustainable policy.</p>
         </div>
       </div>
 
-      <!-- Article 5 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="https://source.unsplash.com/featured/?pollinators,agriculture" alt="Pollinators & Food" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-bold">Climate Change, Pollinators and Cereal Yields</h3>
-          <p class="text-sm text-gray-600 mb-2">With Rachel Ngesa, Victor Senelwa</p>
-          <p class="text-sm">Shows the vital role of pollinators in cereal yield. Offers future data modeling recommendations for agriculture.</p>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/featured/?pollinators,agriculture" alt="Pollinators & Food">
+        <div class="project-content">
+          <h3>Climate Change, Pollinators and Cereal Yields</h3>
+          <p><strong>Co-authors:</strong> Rachel Ngesa, Victor Senelwa</p>
+          <p>Shows the vital role of pollinators in cereal yield. Offers future data modeling recommendations for agriculture.</p>
         </div>
       </div>
 
-      <!-- Article 6 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="https://source.unsplash.com/featured/?climate,economy" alt="Climate and GDP" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-bold">Impact of Weather Variability on Kenya's Economy</h3>
-          <p class="text-sm text-gray-600 mb-2">Master’s dissertation supervised by George Ruigu, PhD</p>
-          <p class="text-sm">Employs a Vector Error Correction Model to evaluate climate impacts on GDP. Supports short-term policy action.</p>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/featured/?climate,economy" alt="Climate and GDP">
+        <div class="project-content">
+          <h3>Impact of Weather Variability on Kenya's Economy</h3>
+          <p><strong>Supervisor:</strong> George Ruigu, PhD</p>
+          <p>Employs a Vector Error Correction Model to evaluate climate impacts on GDP. Supports short-term policy action.</p>
         </div>
       </div>
 
-      <!-- Article 7 -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <img src="https://source.unsplash.com/featured/?gender,climate" alt="Gender & Climate" class="w-full h-40 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-bold">Drought and Floods: Gender & Devolution in Kenya</h3>
-          <p class="text-sm text-gray-600 mb-2">With Rachel Ngesa, Antony Okeyo</p>
-          <p class="text-sm">Published in *Gender, Politics and Governance in Africa*. Explores gender roles in climate adaptation frameworks.</p>
+      <div class="project-card">
+        <img src="https://source.unsplash.com/featured/?gender,climate" alt="Gender & Climate">
+        <div class="project-content">
+          <h3>Drought and Floods: Gender & Devolution in Kenya</h3>
+          <p><strong>Co-authors:</strong> Rachel Ngesa, Antony Okeyo</p>
+          <p>Published in <em>Gender, Politics and Governance in Africa</em>. Explores gender roles in climate adaptation frameworks.</p>
         </div>
       </div>
 
     </div>
-  </div>
+  </section>
+
+  <footer>
+    <div>
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:obednyangena@outlook.com">obednyangena@outlook.com</a></p>
+      <p>Phone: <a href="tel:+254700349788">+254 712 345 678</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/obednyangena-economist">obednyangena-economist</a></p>
+    </div>
+  </footer>
 </body>
 </html>
