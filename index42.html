@@ -2,159 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Obed Nyangena | Home</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
       color: #333;
-      background: #f9f9f9;
     }
-
-    nav {
-      background-color: #1d3557;
+    header {
+      background-color: #1a1a2e;
+      color: white;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
-
-    nav .logo {
-      color: #fff;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-transform: uppercase;
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
     }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
     nav a {
-      color: #fff;
+      color: white;
+      margin-left: 1rem;
       text-decoration: none;
       font-weight: 500;
     }
-
     nav a:hover {
-      color: #4caf50;
+      text-decoration: underline;
     }
-
     .hero {
-      background: url('images/hero.jpg') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1517821099602-471fe67acf66?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      color: #1d3557;
+      color: #1a1a2e;
     }
-
     .hero h1 {
       font-size: 4rem;
-      background-color: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.85);
       padding: 1rem 2rem;
       border-radius: 10px;
     }
-
     .sections {
       display: flex;
-      justify-content: space-around;
       flex-wrap: wrap;
-      padding: 4rem 2rem;
+      justify-content: center;
+      padding: 3rem 1rem;
+      gap: 2rem;
       background-color: #fff;
     }
-
     .card {
-      background-color: #f0f0f0;
-      width: 300px;
-      margin: 1rem;
+      background: #f9f9f9;
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 300px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
-
     .card h2 {
       margin-bottom: 1rem;
-      color: #1d3557;
+      color: #1a1a2e;
     }
-
     .card p {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #555;
+      font-size: 0.95rem;
     }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
       background-color: #1d3557;
       color: #fff;
-      margin-top: 2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
     }
-
-    @media (max-width: 768px) {
-      .sections {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
+    .btn:hover {
+      background-color: #457b9d;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #1a1a2e;
+      color: white;
     }
   </style>
 </head>
 <body>
-
-  <nav>
-    <div class="logo">Obed Nyangena</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="toolset.html">Toolset</a></li>
-      <li><a href="interests.html">Interests</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <header>
+    <h1>OBED NYANGENA</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="toolset.html">Toolset</a>
+      <a href="interests.html">Areas of Interest</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <section class="hero">
-    <h1>ECONOMICS IS EVERYWHERE</h1>
+    <h1>DATA IS EVERYWHERE</h1>
   </section>
 
   <section class="sections">
     <div class="card">
       <h2>Consulting</h2>
       <p>I offer data-driven economic and policy consulting for organizations, government entities, and nonprofits. Let’s transform insight into action.</p>
+      <a class="btn" href="contact.html#consulting">Request Consulting</a>
     </div>
 
     <div class="card">
       <h2>Speaking Engagements</h2>
       <p>Looking for an economist who can break down complex issues into clear, impactful messages? Book me for your next event, conference, or lecture.</p>
+      <a class="btn" href="contact.html#speaking">Book Speaking</a>
     </div>
 
     <div class="card">
       <h2>Collaborations</h2>
       <p>I'm open to research and policy collaborations with like-minded experts and institutions committed to meaningful change.</p>
+      <a class="btn" href="contact.html#collaborations">Propose Collaboration</a>
     </div>
   </section>
 
   <footer>
     <p>&copy; 2025 Obed Nyangena. Built with love on GitHub Pages.</p>
   </footer>
-
 </body>
 </html>
