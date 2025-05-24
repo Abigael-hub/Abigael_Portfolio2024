@@ -1,48 +1,30 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abigael Cherotich | Data Analyst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abigael Cherotich | Home</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #222;
+      margin: 0; padding: 0; background: #f9f9f9; color: #222;
     }
     nav {
       background: #0a0a23;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      position: sticky; top: 0; z-index: 1000;
     }
     nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
+      list-style: none; margin: 0; padding: 0;
+      display: flex; justify-content: center;
     }
-    nav li {
-      margin: 0 1rem;
-    }
+    nav li { margin: 0 1rem; }
     nav a {
-      color: #ddd;
-      text-decoration: none;
-      padding: 1rem;
-      display: block;
-      font-weight: 600;
+      color: #ddd; text-decoration: none; padding: 1rem;
+      display: block; font-weight: 600;
     }
     nav a.active, nav a:hover {
-      color: #4caf50;
-      border-bottom: 2px solid #4caf50;
-    }
-    section {
-      max-width: 800px;
-      margin: 3rem auto;
-      padding: 0 1rem;
+      color: #4caf50; border-bottom: 2px solid #4caf50;
     }
     .hero {
       text-align: center;
@@ -50,37 +32,18 @@
       background: #0a0a23;
       color: #fff;
     }
-    .hero h1 {
-      font-size: 3rem;
-    }
-    .hero p {
-      font-size: 1.25rem;
-    }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.25rem; margin-bottom: 2rem; }
     .btn {
-      background: #4caf50;
-      color: #fff;
-      padding: 0.75rem 2rem;
-      border: none;
-      border-radius: 4px;
-      text-decoration: none;
+      background: #4caf50; color: #fff;
+      padding: 0.75rem 2rem; border: none;
+      border-radius: 4px; text-decoration: none;
       font-weight: 600;
     }
-    ul.tool-list, ul.project-list {
-      list-style: none;
-      padding-left: 0;
-    }
-    ul.tool-list li, ul.project-list li {
-      background: #fff;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      border-radius: 6px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
     footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #0a0a23;
-      color: #ddd;
+      text-align: center; padding: 2rem 1rem;
+      background: #0a0a23; color: #ddd;
+      margin-top: 4rem;
     }
   </style>
 </head>
@@ -88,81 +51,24 @@
 
   <nav>
     <ul>
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#toolset">Toolset</a></li>
-      <li><a href="#interests">Areas of Interest</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="toolset.html">Toolset</a></li>
+      <li><a href="interests.html">Areas of Interest</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <section id="home" class="hero">
+  <section class="hero">
     <h1>Hi, I’m Abigael 👋</h1>
-    <p>I’m a data analyst who loves finding patterns in chaos and turning them into solutions. From cutting costs to boosting revenue, I help businesses make smarter decisions through data.</p>
-    <a href="#about" class="btn">Learn More</a>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m Abigael, a data analyst with a degree in Economics and Statistics, and CPA certification. Over the past five years, I’ve worked with consultancy firms and international organizations, transforming raw data into business intelligence. My work has helped teams cut operational costs, improve customer engagement, and boost revenue through evidence-based strategies.</p>
-    <p>I specialize in Power BI, SQL, Python, and Excel, and I enjoy building dashboards, automating reports, and driving impact through data. Whether it’s analyzing market trends or optimizing internal processes, I bring curiosity, clarity, and a results-driven mindset to every project.</p>
-  </section>
-
-  <section id="toolset">
-    <h2>Toolset</h2>
-    <ul class="tool-list">
-      <li>SQL</li>
-      <li>Python (Pandas, NumPy)</li>
-      <li>Power BI</li>
-      <li>Excel</li>
-      <li>Looker Studio</li>
-      <li>Google BigQuery</li>
-      <li>Tableau</li>
-      <li>Jupyter Notebooks</li>
-    </ul>
-  </section>
-
-  <section id="interests">
-    <h2>Areas of Interest</h2>
-    <ul>
-      <li><strong>Product Analytics:</strong> Data-driven improvements to user experience.</li>
-      <li><strong>Financial Forecasting:</strong> Predictive insights to guide strategic decisions.</li>
-      <li><strong>Consumer Research:</strong> Understand customer needs and behaviors.</li>
-      <li><strong>Public Policy:</strong> Use data for impactful community solutions.</li>
-    </ul>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul class="project-list">
-      <li><strong>Retail Sales Dashboard:</strong> Built in Power BI with daily KPIs and filters. <a href="#">View</a></li>
-      <li><strong>Churn Prediction Model:</strong> Python (sklearn) model for SaaS company. <a href="#">GitHub</a></li>
-      <li><strong>Financial Planning Tool:</strong> Excel + BI dashboard for budgeting. <a href="#">See More</a></li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Got a project idea, collaboration, or just want to talk data? Let’s connect!</p>
-    <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-    <p>GitHub: <a href="https://github.com/abigael-hub" target="_blank">github.com/abigael-hub</a></p>
+    <p>Data Analyst passionate about turning raw data into actionable insights.</p>
+    <a href="about.html" class="btn">Learn More About Me</a>
   </section>
 
   <footer>
     <p>&copy; 2025 Abigael. Built with love on GitHub Pages.</p>
   </footer>
-
-  <script>
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  </script>
 
 </body>
 </html>
