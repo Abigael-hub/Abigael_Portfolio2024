@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Articles Written</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .projects-section {
+      padding: 4rem 2rem;
+      background-color: #f9f9f9;
+    }
+
+    .projects-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-card h3 {
+      margin: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .project-card p {
+      margin: 0 1rem 1rem 1rem;
+      font-size: 0.95rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="projects-section">
+    <h2>Articles Written</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="images/article1.jpg" alt="Digital Fragility" />
+        <h3>Digital Fragility, Assorted Risks and Terrorism Confluence</h3>
+        <p>Examining the risks of data misuse and the need for robust data protection laws in a digital world.</p>
+      </div>
+      <div class="project-card">
+        <img src="images/article2.jpg" alt="Vaccine Uptake" />
+        <h3>Demographic and Occupational Factors & Vaccine Uptake in Kenya</h3>
+        <p>Analysis of vaccine acceptance across population groups in Kenya and key health policy insights.</p>
+      </div>
+      <div class="project-card">
+        <img src="images/article3.jpg" alt="Urbanization and Emissions" />
+        <h3>Climate Change-Urbanization Nexus in East Africa</h3>
+        <p>Investigating how urbanization contributes to carbon emissions and environmental degradation.</p>
+      </div>
+      <!-- More articles can be added below using same structure -->
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+</body>
+</html>
