@@ -42,61 +42,60 @@
       opacity: 0.7;
     }
 
-    .publications-section {
+    .projects-section {
       padding: 4rem 2rem;
       background-color: #f9f9f9;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .publications-section h2 {
-      text-align: center;
+    .projects-section h2 {
       font-size: 2rem;
       color: #1d3557;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
     }
 
-    .articles-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
     }
 
-    .article-card {
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    .project-card {
+      background: white;
+      border-radius: 10px;
       overflow: hidden;
-      max-width: 300px;
-      flex: 1 1 300px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
     }
 
-    .article-card img {
+    .project-card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
     }
 
-    .article-card-content {
+    .project-content {
       padding: 1rem;
     }
 
-    .article-card-content h3 {
+    .project-content h3 {
       font-size: 1.2rem;
       color: #1d3557;
-      margin-bottom: 0.5rem;
+      margin: 0 0 0.5rem;
     }
 
-    .article-card-content p {
+    .project-content p {
       font-size: 0.95rem;
       line-height: 1.5;
-      color: #333;
+      margin: 0.25rem 0;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 2.5rem 1rem;
       background-color: #0f1e33;
       color: white;
     }
@@ -104,6 +103,10 @@
     footer a {
       color: #aadfff;
       text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -120,63 +123,77 @@
     </nav>
   </header>
 
-  <section class="publications-section">
-    <h2>Publications</h2>
-    <div class="articles-container">
-      <div class="article-card">
-        <img src="https://source.unsplash.com/featured/?cybersecurity" alt="Digital Fragility">
-        <div class="article-card-content">
+  <section class="projects-section">
+    <h2>Projects (Selected Articles)</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <img src="images/Icon/article.png" alt="Digital Risk">
+        <div class="project-content">
           <h3>Digital Fragility, Assorted Risks and Terrorism Confluence</h3>
-          <p><strong>With Mavia Imbali</strong> — A call for stronger data privacy frameworks in a digitally connected world.</p>
+          <p><strong>Co-author:</strong> Mavia Imbali</p>
+          <p>Explores data privacy and global espionage. Advocates for updated legislation to combat malicious data acquisition.</p>
         </div>
       </div>
-      <div class="article-card">
-        <img src="https://source.unsplash.com/featured/?covid,vaccine" alt="COVID-19 Vaccine Uptake">
-        <div class="article-card-content">
-          <h3>Demographic & Occupational Factors with SARS-CoV-2 Vaccine Uptake</h3>
-          <p><strong>With B. Ocholla et al.</strong> — Insights into vaccine disparity in Kenya’s workforce during the pandemic.</p>
+
+      <div class="project-card">
+        <img src="images/Icon/article.png" alt="Vaccine Research">
+        <div class="project-content">
+          <h3>SARS-CoV-2 Vaccine Uptake in Kenya</h3>
+          <p><strong>Co-authors:</strong> Bertha A. Ocholla et al.</p>
+          <p>Analyzes disparities in vaccine uptake using demographic and occupational data. Offers insights for health policy.</p>
         </div>
       </div>
-      <div class="article-card">
-        <img src="https://source.unsplash.com/featured/?urbanization,climate" alt="Urbanization & Emissions">
-        <div class="article-card-content">
+
+      <div class="project-card">
+        <img src="images/Icon/article.png" alt="Climate & Urbanization">
+        <div class="project-content">
           <h3>Climate Change-Urbanization Nexus</h3>
-          <p><strong>With V. Senelwa, B. Igesa</strong> — Urban growth's impact on emissions in East Africa.</p>
+          <p><strong>Co-authors:</strong> Victor Senelwa, Benson Igesa</p>
+          <p>Links urbanization and economic growth to carbon emissions in East Africa. Challenges passive narratives.</p>
         </div>
       </div>
-      <div class="article-card">
-        <img src="https://source.unsplash.com/featured/?climate,economy" alt="Weather & Economy">
-        <div class="article-card-content">
-          <h3>Linking Weather Variability & Economic Growth</h3>
-          <p><strong>Guided by Dr. George Ruigu</strong> — Regional weather data and semi-parametric models.</p>
+
+      <div class="project-card">
+        <img src="images/Icon/article.png" alt="Weather Variability">
+        <div class="project-content">
+          <h3>Weather Variability & Economic Growth</h3>
+          <p><strong>Supervisor:</strong> George Ruigu, PhD</p>
+          <p>Uses semi-parametric modeling to link weather patterns with East Africa’s growth. Urges for sustainable policy.</p>
         </div>
       </div>
-      <div class="article-card">
-        <img src="https://source.unsplash.com/featured/?pollination,cereals" alt="Pollinators & Food Security">
-        <div class="article-card-content">
+
+      <div class="project-card">
+        <img src="images/Icon/article.png" alt="Pollinators & Food">
+        <div class="project-content">
           <h3>Climate Change, Pollinators and Cereal Yields</h3>
-          <p><strong>With R. Ngesa & V. Senelwa</strong> — Pollinators' vital role in agricultural resilience.</p>
+          <p><strong>Co-authors:</strong> Rachel Ngesa, Victor Senelwa</p>
+          <p>Shows the vital role of pollinators in cereal yield. Offers future data modeling recommendations for agriculture.</p>
         </div>
       </div>
-      <div class="article-card">
-        <img src="https://source.unsplash.com/featured/?weather,economics" alt="Weather Variability in Kenya">
-        <div class="article-card-content">
-          <h3>Impact of Weather Variability on Growth in Kenya</h3>
-          <p><strong>Master’s dissertation</strong> — VECM analysis on rainfall, temperature and GDP.</p>
+
+      <div class="project-card">
+        <img src="images/Icon/article.png" alt="Climate and GDP">
+        <div class="project-content">
+          <h3>Impact of Weather Variability on Kenya's Economy</h3>
+          <p><strong>Supervisor:</strong> George Ruigu, PhD</p>
+          <p>Employs a Vector Error Correction Model to evaluate climate impacts on GDP. Supports short-term policy action.</p>
         </div>
       </div>
-      <div class="article-card">
-        <img src="https://source.unsplash.com/featured/?gender,devolution" alt="Climate & Gender">
-        <div class="article-card-content">
-          <h3>Climate Change, Gender & Devolution</h3>
-          <p><strong>With R. Ngesa & A. Okeyo</strong> — Chapter on resilience through inclusive governance.</p>
+
+      <div class="project-card">
+        <img src="images/Icon/article.png" alt="Gender & Climate">
+        <div class="project-content">
+          <h3>Drought and Floods: Gender & Devolution in Kenya</h3>
+          <p><strong>Co-authors:</strong> Rachel Ngesa, Antony Okeyo</p>
+          <p>Published in <em>Gender, Politics and Governance in Africa</em>. Explores gender roles in climate adaptation frameworks.</p>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <div style="max-width: 600px; margin: auto;">
+    <div>
       <h2>Contact Me</h2>
       <p>Email: <a href="mailto:obednyangena@outlook.com">obednyangena@outlook.com</a></p>
       <p>Phone: <a href="tel:+254700349788">+254 712 345 678</a></p>
