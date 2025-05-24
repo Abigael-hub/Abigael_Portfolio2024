@@ -13,6 +13,7 @@
       font-family: 'Inter', sans-serif;
       background-color: #ffffff;
       color: #1a1a1a;
+      line-height: 1.6;
     }
 
     header {
@@ -38,68 +39,71 @@
       transition: opacity 0.3s ease;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       opacity: 0.7;
     }
 
-    nav a.active {
-      text-decoration: underline;
-      font-weight: 700;
+    main {
+      max-width: 900px;
+      margin: 3rem auto 4rem auto;
+      padding: 0 1rem;
     }
 
-    .projects-section {
-      padding: 4rem 2rem;
-      background-color: #f9f9f9;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .projects-section h2 {
-      font-size: 2rem;
+    main h2 {
+      font-size: 2.25rem;
       color: #1d3557;
-      text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       font-weight: 800;
+      text-align: center;
     }
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+    p.intro {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #333;
     }
 
-    .project-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .project-card h3 {
-      margin: 1rem;
-      font-size: 1.25rem;
+    a.orcid-link {
       color: #1d3557;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a.orcid-link:hover {
+      text-decoration: underline;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid #ddd;
+      margin: 3rem 0;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    section.article {
+      margin-bottom: 3rem;
+    }
+
+    section.article h3 {
+      font-size: 1.5rem;
+      color: #1d3557;
+      margin-bottom: 0.3rem;
       font-weight: 700;
     }
 
-    .project-card p {
-      margin: 0 1rem 1.5rem 1rem;
+    section.article p.authors {
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 0.8rem;
+      font-style: italic;
+    }
+
+    section.article p.description {
       font-size: 1rem;
-      line-height: 1.5;
       color: #333;
+      white-space: pre-line;
     }
 
     footer {
@@ -107,17 +111,9 @@
       padding: 2rem;
       background-color: #0f1e33;
       color: white;
+      font-size: 0.95rem;
     }
 
-    footer a {
-      color: #aadfff;
-      text-decoration: none;
-      transition: text-decoration 0.3s ease;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
@@ -126,36 +122,93 @@
     <nav>
       <a href="index43.html">Home</a>
       <a href="about.html">About</a>
-      <a href="#">Toolset</a>
+      <a href="#" >Toolset</a>
       <a href="projects.html" class="active">Projects</a>
       <a href="#">Contact</a>
     </nav>
   </header>
 
-  <section class="projects-section">
-    <h2>Articles Written</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <img src="images/article1.jpg" alt="Digital Fragility" />
-        <h3>Digital Fragility, Assorted Risks and Terrorism Confluence</h3>
-        <p>Examining the risks of data misuse and the need for robust data protection laws in a digital world.</p>
-      </div>
-      <div class="project-card">
-        <img src="images/article2.jpg" alt="Vaccine Uptake" />
-        <h3>Demographic and Occupational Factors & Vaccine Uptake in Kenya</h3>
-        <p>Analysis of vaccine acceptance across population groups in Kenya and key health policy insights.</p>
-      </div>
-      <div class="project-card">
-        <img src="images/article3.jpg" alt="Urbanization and Emissions" />
-        <h3>Climate Change-Urbanization Nexus in East Africa</h3>
-        <p>Investigating how urbanization contributes to carbon emissions and environmental degradation.</p>
-      </div>
-      <!-- Add more articles here as needed -->
-    </div>
-  </section>
+  <main>
+    <h2>Projects (Selected Articles)</h2>
+
+    <p class="intro">
+      Throughout the years, I have continued to make insightful contributions through research, scholarship, and innovation for purposes of advancing knowledge, shaping public policy debates and discourses. My Open Researcher and Contributor IDentifier (ORCID) is 
+      <a href="https://orcid.org/0000-0003-4205-6136" target="_blank" rel="noopener noreferrer" class="orcid-link">0000-0003-4205-6136</a>. While ORCID centralizes these works by way of attribution and tracking researcher contributions and affiliations across time, disciplines, and borders, I labored to provide the same here deliberately. Some of these works include:
+    </p>
+
+    <hr />
+
+    <section class="article">
+      <h3>Digital Fragility, Assorted Risks and Terrorism Confluence</h3>
+      <p class="authors">With Mavia Imbali</p>
+      <p class="description">
+        We explore a digitally connected world and the tension between increased data demand and growing concerns over data protection and privacy. This paper discusses digital data value chains and their implications for individuals and organizations amidst a wave of global espionage. We argue for updated legislation and incisive discourse to contain malicious data acquisition and curb criminal activity.
+      </p>
+    </section>
+
+    <hr />
+
+    <section class="article">
+      <h3>Association of Demographic and Occupational Factors with SARS-CoV-2 Vaccine Uptake in Kenya</h3>
+      <p class="authors">With Bertha A. Ocholla, Herbert K. Murayi, Jane W. Mwangi, Steve K. Belle, Phanice Ondeko, Rebecca Kendagor</p>
+      <p class="description">
+        This research examines initial governmental measures to curb COVID-19 spread in Kenya using demographic and occupational lenses. It reveals disparities in vaccine uptake and offers metricized recommendations. Cited by multiple studies, it highlights critical insights into public health policy.
+      </p>
+    </section>
+
+    <hr />
+
+    <section class="article">
+      <h3>Climate Change-Urbanization Nexus: Exploring the Contribution of Urbanization on Carbon Emissions in East Africa</h3>
+      <p class="authors">With Victor Senelwa and Benson Igesa</p>
+      <p class="description">
+        Using panel data and advanced econometric models, we find urbanization and economic growth as key contributors to carbon emissions in East Africa, challenging narratives of Africa’s passive role in climate change. Recommendations call for modernization in economic planning.
+      </p>
+    </section>
+
+    <hr />
+
+    <section class="article">
+      <h3>Linking Weather Variability and Economic Growth in the East African Region: A Semi-Parametric Smooth Coefficient Approach</h3>
+      <p class="authors">Guided by George Ruigu, PhD</p>
+      <p class="description">
+        This paper finds a strong link between weather patterns and economic growth in East Africa using semi-parametric modeling. It advocates for sustainable policy adoption to mitigate economic impacts of weather variability.
+      </p>
+    </section>
+
+    <hr />
+
+    <section class="article">
+      <h3>Linking Climate Change, Pollinators and Cereal Yields in Kenya</h3>
+      <p class="authors">With Rachel Ngesa and Victor Senelwa</p>
+      <p class="description">
+        Our study links climate shifts, pollinators, and cereal yields using long-term data. Findings emphasize the crucial role of pollinators in food security and the impact of climate on cereal production. Recommends granular data modeling for future studies.
+      </p>
+    </section>
+
+    <hr />
+
+    <section class="article">
+      <h3>The Impact of Weather Variability on Economic Growth in Kenya</h3>
+      <p class="authors">Master’s dissertation supervised by George Ruigu, PhD</p>
+      <p class="description">
+        Employing a Vector Error Correction Model, this study finds nuanced relationships between rainfall, temperature, and GDP growth in Kenya. It emphasizes the importance of timely policy measures to address short-term economic implications of climate variability.
+      </p>
+    </section>
+
+    <hr />
+
+    <section class="article">
+      <h3>Drought and Floods: The Triad of Climate Change Adaptation, Gender and Devolution in Kenya</h3>
+      <p class="authors">With Rachel Ngesa and Antony Okeyo</p>
+      <p class="description">
+        Published in <em>Gender, Politics and Governance in Africa</em> (2020), this chapter explores the interaction between gender roles, climate change, and decentralized governance in Kenya. It translates institutional reflections into a published framework for resilience-building.
+      </p>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Obed Nyangena. All rights reserved.</p>
+    &copy; 2025 Obed Nyangena. All rights reserved.
   </footer>
 </body>
 </html>
