@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,67 +5,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Obed Nyangena | Home</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0; padding: 0; background: #f9f9f9; color: #222;
+      color: #333;
+      background: #f9f9f9;
     }
+
     nav {
-      background: #0a0a23;
-      position: sticky; top: 0; z-index: 1000;
+      background-color: #1d3557;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    nav ul {
-      list-style: none; margin: 0; padding: 0;
-      display: flex; justify-content: center;
-    }
-    nav li { margin: 0 1rem; }
-    nav a {
-      color: #ddd; text-decoration: none; padding: 1rem;
-      display: block; font-weight: 600;
-    }
-    nav a.active, nav a:hover {
-      color: #4caf50; border-bottom: 2px solid #4caf50;
-    }
-    .hero {
-      text-align: center;
-      padding: 8rem 2rem 6rem;
-      background: #0a0a23;
+
+    nav .logo {
       color: #fff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: uppercase;
     }
-    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.25rem; margin-bottom: 2rem; }
-    .btn {
-      background: #4caf50; color: #fff;
-      padding: 0.75rem 2rem; border: none;
-      border-radius: 4px; text-decoration: none;
-      font-weight: 600;
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
     }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #4caf50;
+    }
+
+    .hero {
+      background: url('images/hero.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #1d3557;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+    }
+
+    .sections {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 4rem 2rem;
+      background-color: #fff;
+    }
+
+    .card {
+      background-color: #f0f0f0;
+      width: 300px;
+      margin: 1rem;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card h2 {
+      margin-bottom: 1rem;
+      color: #1d3557;
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #555;
+    }
+
     footer {
-      text-align: center; padding: 2rem 1rem;
-      background: #0a0a23; color: #ddd;
-      margin-top: 4rem;
+      text-align: center;
+      padding: 2rem;
+      background-color: #1d3557;
+      color: #fff;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .sections {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <nav>
+    <div class="logo">Obed Nyangena</div>
     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="toolset.html">Toolset</a></li>
-      <li><a href="interests.html">Areas of Interest</a></li>
+      <li><a href="interests.html">Interests</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <section class="hero">
-    <h1>Hujambo1, I am Obed 👋</h1>
-    <p>My name is Obed Nyangena, a passionate economist, data and policy advisor dedicated to making economics accessible and impactful for everyone. Currently I serve as Principal Planning Officer at the National Mining Corporation, and I am an active member of both the Economists Society of Kenya (ESK) and the International Society for Development and Sustainability.</p>
-    <p>My journey into economics began at the University of Nairobi, Kenya, way back in 2010, where I discovered my fascination with data, policy and the power of research to shape real-world outcomes amid uncertainty. Since then, I have worked across government, academia and consultancy, helping organizations and individuals mold and shape data-driven insights to detect and harness opportunities, deter and solve complex challenges in economic development, climate change, security, health and public policy.</p>
-    <p>I created this platform with a strong conviction that lessons learnt over the years can have a forceful multiplier effect and help have a better world to live in- whether it is generating and simplifying economic data, guiding research or offering practical policy advice - so that others can build their own expertise and drive positive change in their organizations and communities.</p>
-    <p>Reach out for incisive and metricized ideas in economics, strategy or policy research. Be rest assured that I will guide you to not only understand how data can make a difference but also customize products that can drive the growth you so much desire.</p>
-    <a href="about.html" class="btn">Learn More About Me</a>
+    <h1>ECONOMICS IS EVERYWHERE</h1>
+  </section>
+
+  <section class="sections">
+    <div class="card">
+      <h2>Consulting</h2>
+      <p>I offer data-driven economic and policy consulting for organizations, government entities, and nonprofits. Let’s transform insight into action.</p>
+    </div>
+
+    <div class="card">
+      <h2>Speaking Engagements</h2>
+      <p>Looking for an economist who can break down complex issues into clear, impactful messages? Book me for your next event, conference, or lecture.</p>
+    </div>
+
+    <div class="card">
+      <h2>Collaborations</h2>
+      <p>I'm open to research and policy collaborations with like-minded experts and institutions committed to meaningful change.</p>
+    </div>
   </section>
 
   <footer>
