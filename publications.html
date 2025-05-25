@@ -245,24 +245,19 @@
           <span class="citation-count">(cited: 10 times)</span>
         </h3>
         <p class="article-authors">Obed Nyangena, Victor Kidake Senelwa, Rachel Ngesa</p>
-        <video id="articleVideo" class="article-image" muted loop playsinline style="display:none; width:100%; height:auto;">
-          <source src="images/Icon/Wheat.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        
-        <script>
-          window.addEventListener('load', () => {
-            setTimeout(() => {
-              const video = document.getElementById('articleVideo');
-              video.style.display = 'block';  // Show the video
-              video.play().catch(error => {
-                // Handle autoplay errors (e.g., user interaction required)
-                console.log('Video play failed:', error);
-              });
-            }, 1000); // Delay of 1 second (1000 milliseconds)
-          });
-        </script>
-
+      <video 
+        id="articleVideo" 
+        class="article-image" 
+        autoplay 
+        muted 
+        loop 
+        playsinline 
+        style="width:100%; height:auto;"
+      >
+        <source src="images/Icon/Wheat.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      
         <p class="article-description">
           Our study links climate shifts, pollinators, and cereal yields using long-term data.
           Findings emphasize the crucial role of pollinators in food security and the impact of climate on cereal production.
