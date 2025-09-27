@@ -2,179 +2,275 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Obed Nyangena | Data Analyst</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abigael Cherotich | BI & Data Analyst</title>
+  <meta name="description" content="Portfolio of Abigael Cherotich – BI & Data Analyst specializing in SQL, Power BI, Tableau, Looker, and cloud analytics. Explore projects, skills, and research."/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #1a1a1a;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #d6d2c8;
       line-height: 1.6;
     }
-
+    a { color: #f64c57; text-decoration: none; }
+    a:hover { text-decoration: underline; }
     header {
-      background-color: #111827;
-      color: white;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-      font-weight: 800;
-    }
-
-    nav a {
-      color: white;
-      margin-left: 1.5rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.3s ease;
-    }
-
-    nav a:hover {
-      opacity: 0.7;
-    }
-
-    .hero {
+      background-color: #1e1e1e;
       text-align: center;
-      padding: 6rem 2rem;
-      background: linear-gradient(to right, #e0f7fa, #fff);
+      padding: 60px 20px 30px;
     }
-
-    .hero h2 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      color: #1d3557;
+    header h1 {
+      font-size: 32px;
+      color: #D6D2C8;
+      margin: 0;
     }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #333;
+    header h2 {
+      font-size: 16px;
+      color: #aaa;
+      margin-top: 8px;
     }
-
-    .sections {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 4rem 2rem;
-      gap: 2rem;
-      background-color: #f9f9f9;
+    section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+    .section-title h2 {
+      font-size: 26px;
+      margin-bottom: 35px;
+      font-weight: 600;
+      text-align: center;
+      color: #D6D2C8;
     }
-
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 2rem;
-      max-width: 320px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-      text-align: left;
+    /* About Me */
+    .about-section {
+      background-color: #1e1e1e;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+    }
+    .about-section h2 { color: #f64c57; }
+    .about-section p { color: #e0e0e0; }
+    /* Specialization */
+    .specialization-wrapper, .projects-wrapper, .tools-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .specialization-box, .project-box, .tool-box {
+      background: #2b2b2b;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       transition: transform 0.3s ease;
+      text-align: center;
     }
-
-    .card:hover {
+    .specialization-box:hover, .project-box:hover, .tool-box:hover {
       transform: translateY(-5px);
     }
-
-    .card h3 {
-      color: #1d3557;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+    .specialization-box h3, .project-box h3, .tool-box h3 {
+      font-size: 18px;
+      color: #f64c57;
+      margin-bottom: 12px;
     }
-
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background-color: #1d3557;
-      color: #fff;
-      text-decoration: none;
+    .specialization-box p, .project-box p, .tool-box p {
+      font-size: 14px;
+      color: #d6d2c8;
+    }
+    /* Projects */
+    .project-box img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    /* Tools */
+    .tool-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+      color: #d6d2c8;
+    }
+    .tool-box ul li { margin: 6px 0; }
+    /* Contact */
+    .contact-section {
+      background-color: #1e1e1e;
+      border-radius: 15px;
+      padding: 40px;
+    }
+    .contact-section form {
+      display: grid;
+      gap: 15px;
+      max-width: 600px;
+      margin: auto;
+    }
+    .contact-section input, .contact-section textarea {
+      padding: 12px;
       border-radius: 6px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
+      border: none;
+      outline: none;
+      font-size: 14px;
     }
-
-    .btn:hover {
-      background-color: #457b9d;
+    .contact-section button {
+      background: linear-gradient(45deg, #f64c57, #e21b5a);
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
     }
-
+    .contact-section button:hover {
+      background: linear-gradient(45deg, #e21b5a, #c2174d);
+    }
+    /* CV Button */
+    .cv-btn-wrapper { text-align: center; margin-top: 40px; }
+    .download-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #f64c57, #e21b5a);
+      color: #fff;
+      padding: 12px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .download-btn:hover { background: linear-gradient(45deg, #e21b5a, #c2174d); }
+    /* Footer */
     footer {
+      background-color: #1e1e1e;
       text-align: center;
-      padding: 2rem;
-      background-color: #111827;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        margin-top: 1rem;
-      }
-
-      .hero h2 {
-        font-size: 2rem;
-      }
-
-      .card {
-        max-width: 100%;
-      }
+      padding: 20px;
+      color: #888;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
+
+  <!-- Header/Profile -->
   <header>
-    <h1>Obed Nyangena</h1>
-    <nav>
-      <a href="index43.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="#">Toolset</a>
-      <a href="projects.html">Projects</a>
-      <a href="publications.html">Publications</a>
-      <a href="#">Contact</a>
-    </nav>
+    <h1>Abigael Cherotich</h1>
+    <h2>BI & Data Analyst | Turning Data into Decisions</h2>
+    <p>
+      📍 Nairobi, Kenya | ✉️ abigaelcherotich867@gmail.com | 
+      <a href="https://linkedin.com/in/abigael-cherotich" target="_blank">LinkedIn</a> | 
+      <a href="#">Portfolio</a>
+    </p>
   </header>
 
-  <section class="hero">
-    <h2>In an economy shaped by data,<br />I uncover the trends that matter.</h2>
-    <p>Data Analyst | Policy Consultant | Visual Storyteller</p>
+  <!-- About Me -->
+  <section class="about-section" id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a BI & Data Analyst passionate about transforming complex data into clear insights and compelling visuals. 
+      I love uncovering patterns that drive smarter decisions. <br><br>
+      With a Bachelor’s degree in Economics and Statistics and over five years of experience in market, corporate, and social research, 
+      I specialize in advanced SQL, cloud analytics, data visualization, statistical analysis, and data storytelling. <br><br>
+      Explore my projects, and feel free to reach out for collaborations or inquiries!
+    </p>
   </section>
 
-  <section class="sections">
-    <div class="card">
-      <h3>Consulting</h3>
-      <p>I offer data-driven economic and policy consulting for organizations, government entities, and nonprofits.</p>
-      <a href="#" class="btn">Request Consulting</a>
-    </div>
-    <div class="card">
-      <h3>Speaking</h3>
-      <p>I simplify complex topics for live audiences, from conference panels to guest lectures and online sessions.</p>
-      <a href="#" class="btn">Book Speaking</a>
-    </div>
-    <div class="card">
-      <h3>Collaborations</h3>
-      <p>I'm open to impactful research and policy work with analysts, economists, and institutions globally.</p>
-      <a href="#" class="btn">Propose Collaboration</a>
+  <!-- Areas of Specialization -->
+  <section id="specialization" class="specialization-section">
+    <div class="section-title"><h2>Areas of Specialization</h2></div>
+    <div class="specialization-wrapper">
+      <div class="specialization-box">
+        <h3>Data Analysis</h3>
+        <p>Transforming raw data into insights using SQL, Python, R, and statistical techniques.</p>
+      </div>
+      <div class="specialization-box">
+        <h3>Dashboard Development</h3>
+        <p>Interactive dashboards in Power BI, Tableau, and Looker applying visualization best practices.</p>
+      </div>
+      <div class="specialization-box">
+        <h3>Customer Segmentation</h3>
+        <p>Creating actionable profiles using demographic, behavioral, and psychographic data.</p>
+      </div>
+      <div class="specialization-box">
+        <h3>Model Development</h3>
+        <p>Designing predictive models and experiments for business intelligence and impact evaluation.</p>
+      </div>
     </div>
   </section>
 
+  <!-- Projects -->
+  <section id="projects">
+    <div class="section-title"><h2>Projects</h2></div>
+    <div class="projects-wrapper">
+      <div class="project-box">
+        <img src="images/projects/dashboard1.png" alt="Dashboard Project">
+        <h3>Power BI Sales Dashboard</h3>
+        <p>Interactive KPIs for revenue, retention, and customer segmentation.</p>
+      </div>
+      <div class="project-box">
+        <img src="images/projects/tableau1.png" alt="Tableau Project">
+        <h3>Tableau Marketing Insights</h3>
+        <p>Campaign performance tracking with segmentation analysis.</p>
+      </div>
+      <div class="project-box">
+        <img src="images/projects/looker1.png" alt="Looker Project">
+        <h3>Looker Executive Reports</h3>
+        <p>Automated stakeholder dashboards aligned to business KPIs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools & Skills -->
+  <section id="tools">
+    <div class="section-title"><h2>Tools & Skills</h2></div>
+    <div class="tools-wrapper">
+      <div class="tool-box">
+        <h3>Statistical & BI Tools</h3>
+        <ul>
+          <li>SQL | Excel | Power BI | Tableau | Looker | RShiny</li>
+          <li>SPSS | STATA | RStudio | Python (Pandas, NumPy, scikit-learn)</li>
+        </ul>
+      </div>
+      <div class="tool-box">
+        <h3>Cloud & Data Engineering</h3>
+        <ul>
+          <li>AWS (Redshift, S3)</li>
+          <li>Google Cloud (BigQuery, Looker Studio)</li>
+          <li>Snowflake | dbt | Apache Kafka</li>
+        </ul>
+      </div>
+      <div class="tool-box">
+        <h3>Core Skills</h3>
+        <ul>
+          <li>Data Visualization & Storytelling</li>
+          <li>Advanced SQL & Data Modeling</li>
+          <li>A/B Testing & Experimentation</li>
+          <li>Data Wrangling & Cleaning</li>
+          <li>Data Protection & Governance (GDPR, Data Ethics)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <div class="section-title"><h2>Contact Me</h2></div>
+    <form action="mailto:abigaelcherotich867@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required/>
+      <input type="email" name="email" placeholder="Your Email" required/>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p style="text-align:center; margin-top:20px;">
+      Or connect with me on <a href="https://linkedin.com/in/abigael-cherotich" target="_blank">LinkedIn</a>
+    </p>
+  </section>
+
+  <!-- CV Button -->
+  <div class="cv-btn-wrapper">
+    <a href="images/about/Abigael_Cherotich_ATS_CV-26sept251.pdf" target="_blank" class="download-btn">
+      <i class="fa fa-download"></i> Download CV
+    </a>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Obed Nyangena | Built with love on GitHub Pages</p>
+    © 2025 Abigael Cherotich. All rights reserved.
   </footer>
+
 </body>
 </html>
