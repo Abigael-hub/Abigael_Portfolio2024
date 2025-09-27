@@ -1,188 +1,256 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abigael Cherotich | BI & Data Analyst</title>
-  <meta name="description" content="Abigael Cherotich – BI & Data Analyst specializing in Power BI, Tableau, Looker, SQL, and cloud analytics. Explore projects and data storytelling.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Abigael Cherotich — Research & BI/Data Analyst</title>
+  <meta name="description" content="Portfolio of Abigael Cherotich — Research, BI and Data Analytics projects, dashboards and reports.">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #d6d2c8;
-    }
+    :root{--accent:#0f62fe;--muted:#6b7280;--bg:#0f1724;--card:#0b1220}
+    *{box-sizing:border-box}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.5;margin:0;background:linear-gradient(180deg,#071226 0%, #031021 100%);color:#e6eef8}
+    .container{max-width:1100px;margin:36px auto;padding:24px}
+    header{display:flex;align-items:center;gap:16px}
+    .avatar{width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{margin:0;font-size:24px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+    .badge{display:inline-block;background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;color:#cfe6ff;font-size:13px}
+    nav{margin-top:18px;display:flex;gap:12px}
+    a.btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:24px}
 
-    header {
-      text-align: center;
-      padding: 60px 20px 30px;
-      background-color: #1e1e1e;
-    }
+    /* Left column */
+    .card{background:rgba(255,255,255,0.03);padding:18px;border-radius:12px}
+    .projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+    .project-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:12px;border-radius:10px;min-height:140px;display:flex;flex-direction:column;justify-content:space-between}
+    .project-card h3{margin:0 0 6px;font-size:16px}
+    .meta{font-size:13px;color:var(--muted)}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .tag{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:999px;font-size:12px;color:#cfe6ff}
+    .card-footer{display:flex;gap:8px;margin-top:12px}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:8px;color:#cfe6ff;text-decoration:none;font-size:13px}
 
-    header h1 {
-      font-size: 28px;
-      color: #D6D2C8;
-    }
+    /* Right column */
+    aside .section{margin-bottom:16px}
+    h4{margin:0 0 8px}
+    ul{margin:0;padding-left:16px;color:var(--muted)}
 
-    header h2 {
-      font-size: 18px;
-      color: #aaa;
-      margin-top: 10px;
-    }
+    /* Responsive */
+    @media (max-width:900px){.grid{grid-template-columns:1fr}.avatar{width:68px;height:68px}}
 
-    section {
-      padding: 60px 20px;
-    }
+    /* simple footer */
+    footer{margin-top:40px;text-align:center;color:var(--muted);font-size:13px}
 
-    .section-title h2 {
-      font-size: 28px;
-      margin-bottom: 40px;
-      font-weight: 600;
-      text-align: center;
-      color: #D6D2C8;
-    }
+    /* Resume button */
+    .download{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:#cfe6ff;text-decoration:none}
 
-    /* About Me Section */
-    .about-section {
-      background-color: #1e1e1e;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px;
-      border-radius: 15px;
-    }
+    /* hero stats */
+    .stats{display:flex;gap:12px;margin-top:14px}
+    .stat{background:rgba(255,255,255,0.02);padding:10px;border-radius:10px;min-width:110px;text-align:center}
+    .stat strong{display:block;font-size:18px}
 
-    .about-section h2 {
-      color: #f64c57;
-      margin-bottom: 20px;
-    }
-
-    .about-section p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #e0e0e0; /* Brighter than white for readability */
-    }
-
-    /* Specialization Section */
-    .specialization-wrapper {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .specialization-box {
-      background: #2b2b2b;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
-      text-align: center;
-    }
-
-    .specialization-box:hover {
-      transform: translateY(-5px);
-    }
-
-    .specialization-box h3 {
-      font-size: 20px;
-      color: #f64c57;
-      margin-bottom: 15px;
-    }
-
-    .specialization-box p {
-      font-size: 15px;
-      color: #d6d2c8;
-    }
-
-    .cv-btn-wrapper {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .download-btn {
-      display: inline-block;
-      background: linear-gradient(45deg, #f64c57, #e21b5a);
-      color: #fff;
-      padding: 12px 35px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s ease;
-    }
-
-    .download-btn:hover {
-      background: linear-gradient(45deg, #e21b5a, #c2174d);
-    }
-
-    footer {
-      background-color: #1e1e1e;
-      text-align: center;
-      padding: 20px;
-      color: #888;
-      font-size: 14px;
-    }
+    /* project modal (lightweight) */
+    .modal{position:fixed;inset:0;background:rgba(2,6,23,0.75);display:flex;align-items:center;justify-content:center;padding:20px;visibility:hidden;opacity:0;transition:all .18s}
+    .modal.open{visibility:visible;opacity:1}
+    .modal-card{background:#081826;padding:18px;border-radius:12px;max-width:920px;width:100%;color:#e6eef8;}
+    .close{float:right;background:transparent;border:0;color:var(--muted);font-size:18px}
+    .modal-grid{display:grid;grid-template-columns:1fr 300px;gap:16px}
+    iframe.demo{width:100%;height:350px;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
   </style>
 </head>
 <body>
-
-  <!-- ====== Header ====== -->
-  <header>
-    <h1>BI & Data Analyst</h1>
-    <h2>Turning Data into Decisions</h2>
-  </header>
-
-  <!-- ====== About Me ====== -->
-  <section class="about-section" id="about">
-    <h2>About Me</h2>
-    <p>
-      Welcome to my portfolio website! <br><br>
-      I’m a BI & Data Analyst passionate about transforming complex data into clear insights and compelling visuals. 
-      I love uncovering patterns that drive smarter decisions. <br><br>
-      With a Bachelor’s degree in Economics and Statistics and five years of experience in market, research, and social analytics, 
-      I specialize in data visualization, advanced SQL, statistical analysis, and translating raw data into actionable strategies. <br><br>
-      Explore my projects, and feel free to reach out for collaborations or inquiries!
-    </p>
-  </section>
-
-  <!-- ====== Areas of Specialization ====== -->
-  <section id="specialization" class="specialization-section">
-    <div class="container">
-      <div class="section-title">
-        <h2>Areas of Specialization</h2>
-      </div>
-      <div class="specialization-wrapper">
-        <div class="specialization-box">
-          <h3>Data Analysis</h3>
-          <p>Transforming raw data into meaningful insights using SQL, Python, R, and advanced statistical techniques.</p>
-        </div>
-        <div class="specialization-box">
-          <h3>Dashboard Development</h3>
-          <p>Building interactive dashboards in Power BI, Tableau, and Looker that follow data visualization best practices.</p>
-        </div>
-        <div class="specialization-box">
-          <h3>Customer Segmentation</h3>
-          <p>Using demographic and behavioral data to create actionable customer profiles for targeted strategies.</p>
-        </div>
-        <div class="specialization-box">
-          <h3>Model Development</h3>
-          <p>Designing and implementing predictive models and experiments for business intelligence and impact evaluation.</p>
+  <div class="container">
+    <header>
+      <div class="avatar">AC</div>
+      <div>
+        <h1>Abigael Cherotich</h1>
+        <div class="badge">Research &amp; BI / Data Analyst — Nairobi, Kenya</div>
+        <p class="lead">I build dashboards, run rigorous research and deliver predictive analytics to help organisations make evidence-based decisions.</p>
+        <div class="stats">
+          <div class="stat"><strong>5+</strong><span class="meta">Years experience</span></div>
+          <div class="stat"><strong>50+</strong><span class="meta">Dashboards built</span></div>
+          <div class="stat"><strong>30+</strong><span class="meta">Proposals submitted</span></div>
         </div>
       </div>
+    </header>
 
-      <!-- Download CV Button -->
-      <div class="cv-btn-wrapper">
-        <a href="images/about/Abigael_Cherotich_ATS_CV-26sept251.pdf" target="_blank" class="download-btn">
-          <i class="fa fa-download"></i> Download CV
-        </a>
-      </div>
+    <nav>
+      <a class="btn" href="#projects">View Projects</a>
+      <a class="download" href="#resume">Download CV (PDF)</a>
+      <a class="ghost" href="mailto:abigaelcherotich867@gmail.com">Contact</a>
+      <a class="ghost" href="https://linkedin.com/in/abigael-cherotich" target="_blank">LinkedIn</a>
+      <a class="ghost" href="https://github.com/your-username" target="_blank">GitHub</a>
+    </nav>
+
+    <main class="grid">
+      <section>
+        <div class="card">
+          <h4 id="projects">Selected Projects</h4>
+          <p class="meta">A curated list of flagship projects demonstrating BI, research, data engineering, and predictive analytics.</p>
+
+          <div class="projects" style="margin-top:12px">
+
+            <!-- Project 1 -->
+            <article class="project-card">
+              <div>
+                <h3>Retail Sales Performance Dashboard</h3>
+                <div class="meta">Power BI • SQL • Forecasting</div>
+                <p class="meta" style="margin-top:8px">Interactive retail dashboard with KPIs, drill-downs by region, and short-term forecasts.</p>
+                <div class="tags"><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Forecasting</span></div>
+              </div>
+              <div class="card-footer">
+                <a class="ghost" href="#" onclick="openModal(event,'retail')">Preview</a>
+                <a class="ghost" href="#" onclick="openNewTab('https://github.com/your-username/retail-dashboard')">Code</a>
+                <a class="btn" href="#" onclick="openNewTab('https://app.powerbi.com/...')">Open Dashboard</a>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card">
+              <div>
+                <h3>Customer Segmentation & ETL</h3>
+                <div class="meta">Postgres • dbt • Airflow</div>
+                <p class="meta" style="margin-top:8px">Data modelling, optimized queries and an automated ETL pipeline for segmentation and churn analysis.</p>
+                <div class="tags"><span class="tag">dbt</span><span class="tag">Airflow</span><span class="tag">SQL</span></div>
+              </div>
+              <div class="card-footer">
+                <a class="ghost" href="#" onclick="openModal(event,'segmentation')">Preview</a>
+                <a class="ghost" href="#" onclick="openNewTab('https://github.com/your-username/segmentation-etl')">Code</a>
+                <a class="btn" href="#" onclick="openNewTab('https://your-docs-hosting.link/segmentation')">Docs</a>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card">
+              <div>
+                <h3>Impact of Mobile Money on Financial Inclusion</h3>
+                <div class="meta">R • Stata • Quasi-Experimental</div>
+                <p class="meta" style="margin-top:8px">Quasi-experimental study (DiD/PSM) with policy recommendations and reproducible code.</p>
+                <div class="tags"><span class="tag">Impact</span><span class="tag">R</span><span class="tag">Stata</span></div>
+              </div>
+              <div class="card-footer">
+                <a class="ghost" href="#" onclick="openModal(event,'mobilemoney')">Read</a>
+                <a class="ghost" href="#" onclick="openNewTab('https://github.com/your-username/mobile-money-impact')">Code</a>
+                <a class="btn" href="#" onclick="openNewTab('https://your-reports-hosting.link/mobilemoney.pdf')">Report</a>
+              </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="project-card">
+              <div>
+                <h3>Credit Risk Scoring Model</h3>
+                <div class="meta">Python • XGBoost • Feature Engineering</div>
+                <p class="meta" style="margin-top:8px">End-to-end model, feature importance, model evaluation and deployable scoring script.</p>
+                <div class="tags"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">ML</span></div>
+              </div>
+              <div class="card-footer">
+                <a class="ghost" href="#" onclick="openModal(event,'credit')">Preview</a>
+                <a class="ghost" href="#" onclick="openNewTab('https://github.com/your-username/credit-risk')">Code</a>
+                <a class="btn" href="#" onclick="openNewTab('https://nbviewer.org/...')">Notebook</a>
+              </div>
+            </article>
+
+            <!-- Project 5 -->
+            <article class="project-card">
+              <div>
+                <h3>Pricing A/B Experiment</h3>
+                <div class="meta">Python • Statsmodels • Power BI</div>
+                <p class="meta" style="margin-top:8px">Experiment design and causal inference with statistical testing and visualization for stakeholders.</p>
+                <div class="tags"><span class="tag">A/B Testing</span><span class="tag">Experimentation</span></div>
+              </div>
+              <div class="card-footer">
+                <a class="ghost" href="#" onclick="openModal(event,'abtest')">Read</a>
+                <a class="ghost" href="#" onclick="openNewTab('https://github.com/your-username/ab-testing')">Code</a>
+                <a class="btn" href="#" onclick="openNewTab('https://app.powerbi.com/...')">Results</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Add a short "How I work" card -->
+        <div style="margin-top:18px" class="card">
+          <h4>How I work</h4>
+          <p class="meta">I combine rigorous methods with pragmatic BI to deliver reports and dashboards that decision-makers actually use. I document code, produce client reports, and embed reproducibility in all projects.</p>
+          <ul style="margin-top:8px">
+            <li>Problem definition & stakeholders</li>
+            <li>Data ingestion & quality checks</li>
+            <li>Analysis, modelling & visualisation</li>
+            <li>Delivery: interactive dashboards + written report</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <aside>
+        <div class="section card">
+          <h4>Contact</h4>
+          <p class="meta">Nairobi, Kenya • <a href="mailto:abigaelcherotich867@gmail.com">abigaelcherotich867@gmail.com</a></p>
+          <p class="meta">Phone: +254 704 990 012</p>
+          <div style="margin-top:10px"><a class="btn" href="mailto:abigaelcherotich867@gmail.com">Email me</a></div>
+        </div>
+
+        <div class="section card">
+          <h4>Skills & Tools</h4>
+          <ul>
+            <li>Power BI • Tableau • Looker</li>
+            <li>SQL • BigQuery • Redshift • Snowflake</li>
+            <li>Python • R • Stata • SPSS</li>
+            <li>Airflow • dbt • Kafka • Git</li>
+          </ul>
+        </div>
+
+        <div class="section card">
+          <h4>Download</h4>
+          <p class="meta">Resume, reports and sample notebooks available on GitHub and by request.</p>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <a class="download" id="resume" href="#">Download CV</a>
+            <a class="ghost" href="#" onclick="openNewTab('https://github.com/your-username')">View GitHub</a>
+          </div>
+        </div>
+
+      </aside>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Abigael Cherotich — Built with data, design & clarity.
+    </footer>
+  </div>
+
+  <!-- lightweight modal previews -->
+  <div class="modal" id="modal">
+    <div class="modal-card">
+      <button class="close" onclick="closeModal()">✕</button>
+      <div id="modal-content"></div>
     </div>
-  </section>
+  </div>
 
-  <!-- ====== Footer ====== -->
-  <footer>
-    © 2025 Abigael Cherotich. All rights reserved.
-  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
+    function openNewTab(url){ window.open(url,'_blank'); }
+
+    function openModal(e, id){
+      e && e.preventDefault();
+      const modal = document.getElementById('modal');
+      const content = document.getElementById('modal-content');
+      let html = '';
+      if(id==='retail'){
+        html = `<div class="modal-grid"><div><h3>Retail Sales Performance Dashboard</h3><p class="meta">Power BI • SQL • Forecasting</p><iframe class="demo" src="https://app.powerbi.com/embed?reportId=REPLACE_WITH_YOUR_REPORT_ID"></iframe></div><div><h4>Summary</h4><p class="meta">Key KPIs, trends and a 8-week forecast. Includes drill-downs by region and product category.</p><p class="meta"><strong>Skills:</strong> Dashboarding, Data Modelling, Forecasting.</p><p style="margin-top:12px"><a class="btn" href="#" onclick="openNewTab('https://github.com/your-username/retail-dashboard')">Open Code</a></p></div></div>`
+      } else if(id==='segmentation'){
+        html = `<div><h3>Customer Segmentation & ETL</h3><p class="meta">Postgres • dbt • Airflow</p><p class="meta">Includes ER diagram, sample optimized queries and the dbt models. Use the code link to reproduce.</p><p style="margin-top:12px"><a class="btn" href="#" onclick="openNewTab('https://github.com/your-username/segmentation-etl')">View Repo</a></p></div>`
+      } else if(id==='mobilemoney'){
+        html = `<div><h3>Impact of Mobile Money on Financial Inclusion</h3><p class="meta">R • Stata • DiD / PSM</p><p class="meta">A reproducible analysis using the World Bank Findex dataset with policy recommendations and code to reproduce all tables and figures.</p><p style="margin-top:12px"><a class="btn" href="#" onclick="openNewTab('https://github.com/your-username/mobile-money-impact')">Open Report & Code</a></p></div>`
+      } else if(id==='credit'){
+        html = `<div><h3>Credit Risk Scoring Model</h3><p class="meta">Python • XGBoost • Feature Engineering</p><iframe class="demo" src="https://nbviewer.org/github/your-username/credit-risk/blob/main/notebook.ipynb"></iframe></div>`
+      } else if(id==='abtest'){
+        html = `<div><h3>Pricing A/B Experiment</h3><p class="meta">Statsmodels • Power BI</p><p class="meta">A full experiment: design, power calculations, t-tests and visualization. Results summary and recommended action plan included.</p><p style="margin-top:12px"><a class="btn" href="#" onclick="openNewTab('https://github.com/your-username/ab-testing')">View Code</a></p></div>`
+      } else {
+        html = `<div><h3>Project</h3><p class="meta">Details coming soon.</p></div>`
+      }
+      content.innerHTML = html; modal.classList.add('open');
+    }
+    function closeModal(){ document.getElementById('modal').classList.remove('open'); }
+  </script>
 </body>
 </html>
