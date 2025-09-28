@@ -105,30 +105,6 @@
       color: #f2f2f2;
     }
 
-    /* Toolset */
-    .toolset {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    .tool {
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 1rem 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      font-weight: 600;
-      color: var(--secondary);
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-    .tool:hover {
-      background: var(--primary);
-      color: #fff;
-      transform: translateY(-3px);
-    }
-
     /* Projects */
     .projects {
       display: grid;
@@ -191,6 +167,27 @@
     }
     .ghost:hover { border-color: var(--accent); color: var(--accent); }
 
+    /* Tools */
+    .tools {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .tools h3 {
+      color: var(--secondary);
+      margin-top: 1.5rem;
+    }
+    .tools ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+    }
+    .tools ul li {
+      margin: 5px 0;
+      color: var(--muted);
+    }
+
     /* Contact */
     .contact {
       text-align: center;
@@ -226,8 +223,8 @@
   <nav>
     <a href="#about">About</a>
     <a href="#stats">Stats</a>
-    <a href="#toolset">Tools</a>
     <a href="#projects">Projects</a>
+    <a href="#tools">Tools</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -246,27 +243,6 @@
       <div class="stat"><h2 class="counter" data-target="5">0</h2><p>Years Experience</p></div>
       <div class="stat"><h2 class="counter" data-target="50">0</h2><p>Dashboards Built</p></div>
       <div class="stat"><h2 class="counter" data-target="20">0</h2><p>Projects Completed</p></div>
-    </section>
-
-    <!-- Toolset -->
-    <section id="toolset">
-      <h2>Toolset</h2>
-      <div class="toolset">
-        <div class="tool">SQL</div>
-        <div class="tool">Python</div>
-        <div class="tool">R</div>
-        <div class="tool">SPSS</div>
-        <div class="tool">Stata</div>
-        <div class="tool">Excel</div>
-        <div class="tool">Power BI</div>
-        <div class="tool">Tableau</div>
-        <div class="tool">Looker</div>
-        <div class="tool">Google Cloud</div>
-        <div class="tool">AWS</div>
-        <div class="tool">dbt</div>
-        <div class="tool">Airflow</div>
-        <div class="tool">Kafka</div>
-      </div>
     </section>
 
     <!-- Projects -->
@@ -329,6 +305,45 @@
           </div>
         </article>
       </div>
+    </section>
+
+    <!-- Tools -->
+    <section id="tools" class="tools">
+      <h2>Tools & Platforms</h2>
+
+      <h3>Statistical & Programming</h3>
+      <ul>
+        <li>SPSS</li>
+        <li>Python</li>
+        <li>RStudio</li>
+        <li>STATA</li>
+        <li>SQL</li>
+        <li>RShiny</li>
+      </ul>
+
+      <h3>BI & Visualization</h3>
+      <ul>
+        <li>Power BI</li>
+        <li>RShiny</li>
+        <li>Tableau</li>
+        <li>Looker</li>
+        <li>Looker Studio</li>
+        <li>Excel</li>
+      </ul>
+
+      <h3>Cloud Platforms</h3>
+      <ul>
+        <li>Snowflake</li>
+        <li>AWS (Redshift, S3)</li>
+        <li>Google Cloud (BigQuery)</li>
+      </ul>
+
+      <h3>Data Engineering Tools</h3>
+      <ul>
+        <li>Apache Airflow</li>
+        <li>Apache Kafka</li>
+        <li>Git</li>
+      </ul>
     </section>
 
     <!-- Contact -->
