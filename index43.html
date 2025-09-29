@@ -11,7 +11,6 @@
       --accent: #f64c57;
       --bg: #f4f4f9;
       --muted: #6b7280;
-      --stats-bg: #e0e0e0; /* new grey background for stats */
     }
     * {
       margin: 0;
@@ -80,51 +79,49 @@
     }
 
      /* About */
-    .about {
-      display: flex;
-      flex-wrap: nowrap;   /* force image + text side by side */
-      align-items: flex-start;
-    }
-    .about img {
-      max-width: 180px;
-      border-radius: 50%;
-      margin-right: 2rem;
-      flex-shrink: 0;
-    }
-    .about-text {
-      flex: 1;
-    }
-    .about-text p {
-      margin-bottom: 1rem;
-    }
+.about {
+  display: flex;
+  flex-wrap: nowrap;   /* force image + text side by side */
+  align-items: flex-start;
+}
+.about img {
+  max-width: 180px;
+  border-radius: 50%;
+  margin-right: 2rem;
+  flex-shrink: 0;
+}
+.about-text {
+  flex: 1;
+}
+.about-text p {
+  margin-bottom: 1rem;
+}
 
-    /* Stats */
-    .quick-stats {
-      background-color: var(--stats-bg); /* grey background */
-      padding: 1.5rem; /* reduced padding */
-      border-radius: 8px;
-      display: flex;
-      justify-content: center;
-      gap: 2rem; /* tighter spacing */
-      flex-wrap: wrap;
-      text-align: center;
-      max-width: 800px; /* reduced container size */
-      margin: 0 auto 3rem auto; /* center align */
-    }
-    .quick-stats .stat {
-      color: #333;
-      margin: 0.5rem;
-      flex: 0 0 200px; /* fixed width for smaller layout */
-    }
-    .quick-stats .stat h2 {
-      font-size: 2.5rem; /* reduced font size */
-      font-weight: bold;
-      color: var(--accent);
-    }
-    .quick-stats .stat p {
-      font-size: 1rem;
-      color: #555;
-    }
+ /* Stats */
+.quick-stats {
+  background-color: #e0e0e0; /* grey background */
+  padding: 1rem;  
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* ✅ card-style shadow */
+}
+.quick-stats .stat {
+  color: #fff;
+  margin: 0.5rem; 
+  flex: 1;
+}
+.quick-stats .stat h2 {
+  font-size: 2.5rem; 
+  font-weight: bold;
+  color: var(--accent);
+}
+.quick-stats .stat p {
+  font-size: 1rem;
+  color: #333; 
+}
 
     /* Tools */
     .tools {
@@ -268,17 +265,18 @@
 
   <div class="container">
    <!-- About -->
-   <section id="about" class="about">
-     <img src="images/about/may7.jpg" alt="Abigael Cherotich">
-     <div class="about-text">
-       <p>
-         I am a senior research and BI/data analyst with over five years of experience working in leading consultancy firms, where I have supported corporates, businesses, and international NGOs in conducting market research, social research, and product analysis. My expertise lies in applying both quantitative and qualitative methods to generate actionable insights that drive strategy, impact evaluation, and growth.
-       </p>
-       <p>
-         I specialize in using a modern data stack — advanced SQL, Python, R, cloud platforms, and BI tools — to design and implement scalable analytics solutions. I have built and deployed real-time dashboards, automated reporting workflows, and delivered data-driven presentations that have helped organizations improve decision-making, optimize revenue, and enhance operational efficiency.
-       </p>
-     </div>
-   </section>
+<section id="about" class="about">
+  <img src="images/about/may7.jpg" alt="Abigael Cherotich">
+  <div class="about-text">
+    <p>
+      I am a senior research and BI/data analyst with over five years of experience working in leading consultancy firms, where I have supported corporates, businesses, and international NGOs in conducting market research, social research, and product analysis. My expertise lies in applying both quantitative and qualitative methods to generate actionable insights that drive strategy, impact evaluation, and growth.
+    </p>
+    <p>
+      I specialize in using a modern data stack — advanced SQL, Python, R, cloud platforms, and BI tools — to design and implement scalable analytics solutions. I have built and deployed real-time dashboards, automated reporting workflows, and delivered data-driven presentations that have helped organizations improve decision-making, optimize revenue, and enhance operational efficiency.
+    </p>
+  </div>
+</section>
+
 
     <!-- Stats -->
     <section id="stats" class="quick-stats">
@@ -314,7 +312,61 @@
     <section id="projects">
       <h2>Projects</h2>
       <div class="projects">
-        <!-- Project cards (unchanged) -->
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div>
+            <h3>Retail Sales Dashboard</h3>
+            <div class="meta">Power BI • SQL • Forecasting</div>
+            <p class="meta" style="margin-top:8px">Interactive retail dashboard tracking KPIs, regional drilldowns, and short-term forecasts.</p>
+            <div class="tags"><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Forecasting</span></div>
+          </div>
+          <div class="card-footer">
+            <a class="ghost" href="#">Code</a>
+            <a class="btn" href="#">View Dashboard</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div>
+            <h3>Customer Segmentation & ETL</h3>
+            <div class="meta">Postgres • dbt • Airflow</div>
+            <p class="meta" style="margin-top:8px">Automated ETL pipeline with optimized queries for customer segmentation and churn analysis.</p>
+            <div class="tags"><span class="tag">dbt</span><span class="tag">Airflow</span><span class="tag">SQL</span></div>
+          </div>
+          <div class="card-footer">
+            <a class="ghost" href="#">Code</a>
+            <a class="btn" href="#">Docs</a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div>
+            <h3>Impact of Mobile Money</h3>
+            <div class="meta">R • Stata • Quasi-Experimental</div>
+            <p class="meta" style="margin-top:8px">DiD/PSM study on mobile money's role in financial inclusion using World Bank Findex data.</p>
+            <div class="tags"><span class="tag">Impact</span><span class="tag">R</span><span class="tag">Stata</span></div>
+          </div>
+          <div class="card-footer">
+            <a class="ghost" href="#">Code</a>
+            <a class="btn" href="#">Read Report</a>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card">
+          <div>
+            <h3>Credit Risk Scoring</h3>
+            <div class="meta">Python • XGBoost • Feature Engineering</div>
+            <p class="meta" style="margin-top:8px">End-to-end ML model with feature importance, evaluation metrics, and deployable scoring script.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">ML</span></div>
+          </div>
+          <div class="card-footer">
+            <a class="ghost" href="#">Code</a>
+            <a class="btn" href="#">Notebook</a>
+          </div>
+        </article>
       </div>
     </section>
 
