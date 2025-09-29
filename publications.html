@@ -4,221 +4,234 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abigael Cherotich | Portfolio</title>
-  <meta name="description" content="Portfolio of Abigael Cherotich – Senior Research & BI/Data Analyst specializing in dashboards, analytics pipelines, and impact evaluation.">
-  <link rel="icon" href="images/favicon.png">
   <style>
     :root {
       --primary: #016064;
-      --secondary: #02393d;
-      --accent: #f64c57;
-      --bg: #f4f4f9;
-      --muted: #6b7280;
+      --secondary: #028090;
+      --light: #f8f9fa;
+      --dark: #222;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body { background: var(--bg); color: #333; line-height: 1.6; padding-top: 180px; }
 
-    /* Header wrapper */
-    .header-wrapper { position: fixed; top: 0; width: 100%; z-index: 1000; }
-    header { background: var(--primary); color: #fff; padding: 2rem; text-align: center; }
-    header h1 { font-size: 2.5rem; }
-    header p { margin-top: 0.5rem; font-size: 1.1rem; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--light);
+      color: var(--dark);
+    }
 
-    nav { background: var(--secondary); padding: 1rem; text-align: center; }
-    nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; transition: color 0.3s; }
-    nav a.active, nav a:hover { color: var(--accent); }
+    header {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
 
-    .container { width: 90%; max-width: 1100px; margin: 2rem auto; }
-    section { margin-bottom: 3rem; }
-    h2 { color: var(--primary); margin-bottom: 1rem; border-bottom: 2px solid #ddd; display: inline-block; padding-bottom: 5px; }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
 
-    /* About */
-    .about { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; }
-    .about img { max-width: 180px; border-radius: 50%; }
-    .about-text p { margin-bottom: 1rem; }
-    .about-text ul { margin-left: 1.5rem; list-style: disc; }
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+    }
 
-    /* Stats */
-    .quick-stats { background-color: var(--primary); padding: 2rem; border-radius: 10px; display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; }
-    .quick-stats .stat { color: #fff; margin: 1rem; flex: 1; transition: transform 0.3s; }
-    .quick-stats .stat:hover { transform: scale(1.05); }
-    .quick-stats .stat h2 { font-size: 3rem; font-weight: bold; color: var(--accent); }
+    /* About Section */
+    #about {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      background: white;
+    }
 
-    /* Tools */
-    .tools { background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .tools-list { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-around; }
-    .tool-category { flex: 1; min-width: 200px; background: var(--bg); padding: 1rem; border-radius: 8px; transition: transform 0.3s; }
-    .tool-category:hover { transform: translateY(-5px); }
-    .tool-category h3 { margin-bottom: 0.5rem; color: var(--secondary); }
+    #about img {
+      width: 280px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-    /* Projects */
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .project-card { background: #fff; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s; }
-    .project-card:hover { transform: translateY(-5px); }
-    .project-card img { width: 100%; height: 180px; object-fit: cover; }
-    .project-card-content { padding: 1.2rem; }
-    .project-card h3 { margin-bottom: 0.5rem; color: var(--secondary); }
-    .meta { font-size: 0.9rem; color: var(--muted); }
-    .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
-    .tag { background: #eee; padding: 4px 8px; border-radius: 999px; font-size: 12px; color: var(--secondary); }
-    .card-footer { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
-    .btn, .ghost { padding: 8px 12px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; font-weight: 600; text-align: center; transition: 0.3s; }
-    .btn { background: var(--primary); color: #fff; }
-    .btn:hover { background: var(--accent); }
-    .ghost { background: transparent; border: 1px solid #ccc; color: var(--secondary); }
-    .ghost:hover { border-color: var(--accent); color: var(--accent); }
+    #about .about-text {
+      max-width: 600px;
+    }
 
-    /* Contact */
-    .contact { text-align: center; }
-    .contact a { display: inline-flex; align-items: center; gap: 8px; margin: 10px; padding: 10px 20px; background: var(--primary); color: #fff; text-decoration: none; border-radius: 5px; transition: background 0.3s; }
-    .contact a:hover { background: var(--accent); }
+    #about h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
 
-    footer { background: var(--secondary); color: #fff; text-align: center; padding: 1rem; margin-top: 3rem; }
+    #about p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--secondary);
+    }
+
+    /* Projects Section */
+    #projects {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      color: var(--secondary);
+    }
+
+    /* Toolset Section */
+    #tools {
+      padding: 4rem 2rem;
+      background: white;
+      text-align: center;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .tool {
+      background: var(--light);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    /* Contact Section */
+    #contact {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    #contact a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      #about {
+        flex-direction: column;
+        text-align: center;
+      }
+      #about img {
+        width: 200px;
+      }
+      #about h2 {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <div class="header-wrapper">
-    <header>
-      <h1>Abigael Cherotich</h1>
-      <p>Turning Data into Business Impact | Research & BI Analyst</p>
-    </header>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#stats">Stats</a>
-      <a href="#tools">Tools</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
 
-  <div class="container">
-    <!-- About -->
-    <section id="about" class="about">
-      <img src="images/about/may7.jpg" alt="Abigael Cherotich headshot">
-      <div class="about-text">
-        <p>I am a senior research and BI/data analyst with 5+ years of experience in consultancy, corporate, and NGO sectors. My expertise blends <strong>quantitative</strong> and <strong>qualitative</strong> methods to deliver actionable insights for strategy, impact evaluation, and growth.</p>
-        <ul>
-          <li>Designed and deployed interactive dashboards and automated reporting workflows.</li>
-          <li>Conducted impact evaluations (quasi-experimental, market, and social research).</li>
-          <li>Built end-to-end ETL pipelines and machine learning models.</li>
-        </ul>
+  <header>
+    <h1>Abigael Cherotich</h1>
+    <p>Research & Data Analyst | Portfolio</p>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <img src="profile.jpg" alt="Abigael Cherotich">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        I am a Research and Data Analyst with 5+ years of experience delivering actionable insights 
+        through quantitative and qualitative research across corporate, consulting, and development sectors.
+      </p>
+      <p>
+        I specialize in turning complex datasets into interactive dashboards, clear reports, and 
+        impactful visualizations that support evidence-based decision-making.
+      </p>
+      <a href="Abigael-CV.pdf" class="btn" download>Download CV</a>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Financial Dashboard</h3>
+        <p>Designed a real-time financial dashboard in Power BI, improving reporting efficiency by 50%.</p>
       </div>
-    </section>
-
-    <!-- Stats -->
-    <section id="stats" class="quick-stats">
-      <div class="stat"><h2 class="counter" data-target="5">0</h2><p>Years Experience</p></div>
-      <div class="stat"><h2 class="counter" data-target="50">0</h2><p>Dashboards Built</p></div>
-      <div class="stat"><h2 class="counter" data-target="20">0</h2><p>Projects Completed</p></div>
-      <div class="stat"><h2 class="counter" data-target="10">0</h2><p>Organizations Supported</p></div>
-    </section>
-
-    <!-- Tools -->
-    <section id="tools" class="tools">
-      <h2>Toolset</h2>
-      <div class="tools-list">
-        <div class="tool-category">
-          <h3>Statistical & Programming</h3>
-          <p>SPSS | Python | RStudio | STATA | SQL | RShiny</p>
-        </div>
-        <div class="tool-category">
-          <h3>BI & Visualization</h3>
-          <p>Power BI | Tableau | Looker | Excel</p>
-        </div>
-        <div class="tool-category">
-          <h3>Cloud Platforms</h3>
-          <p>Snowflake | AWS | Google BigQuery</p>
-        </div>
-        <div class="tool-category">
-          <h3>Data Engineering Tools</h3>
-          <p>Airflow | Kafka | Git | dbt</p>
-        </div>
+      <div class="project-card">
+        <h3>Market Research Analysis</h3>
+        <p>Conducted market and impact analysis for development programs across multiple sectors.</p>
       </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects">
-        <!-- Project Example -->
-        <article class="project-card">
-          <img src="images/projects/retail-dashboard.png" alt="Retail Sales Dashboard preview">
-          <div class="project-card-content">
-            <h3>Retail Sales Dashboard</h3>
-            <div class="meta">Power BI • SQL • Forecasting</div>
-            <p class="meta">Interactive retail dashboard tracking KPIs, regional drilldowns, and short-term forecasts.</p>
-            <div class="tags"><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Forecasting</span></div>
-            <div class="card-footer">
-              <a class="ghost" href="#">Code</a>
-              <a class="btn" href="#">View Dashboard</a>
-            </div>
-          </div>
-        </article>
-        <!-- Repeat for other projects -->
+      <div class="project-card">
+        <h3>SQL & Python Analytics</h3>
+        <p>Automated data pipelines and performed advanced statistical modeling for A/B testing.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <a href="mailto:abigaelcherotich867@gmail.com">📧 Email</a>
-      <a href="https://linkedin.com/in/abigael-cherotich" target="_blank">🔗 LinkedIn</a>
-      <a href="Abigael_CV.pdf" target="_blank">📄 Download CV</a>
-    </section>
-  </div>
+  <!-- Toolset Section -->
+  <section id="tools">
+    <h2>Toolset</h2>
+    <div class="tools">
+      <div class="tool">Python</div>
+      <div class="tool">SQL</div>
+      <div class="tool">Power BI</div>
+      <div class="tool">Tableau</div>
+      <div class="tool">Excel</div>
+      <div class="tool">Google Data Studio</div>
+      <div class="tool">Looker</div>
+      <div class="tool">Stata</div>
+      <div class="tool">SPSS</div>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Abigael Cherotich | Portfolio</p>
-  </footer>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:abigael@example.com">abigael@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/abigaelcherotich" target="_blank">linkedin.com/in/abigaelcherotich</a></p>
+    <p>GitHub: <a href="https://github.com/abigaelcherotich" target="_blank">github.com/abigaelcherotich</a></p>
+  </section>
 
-  <script>
-    // Counter animation
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200;
-    const animateCounters = () => {
-      counters.forEach(counter => {
-        const updateCount = () => {
-          const target = +counter.getAttribute('data-target');
-          const count = +counter.innerText;
-          const increment = target / speed;
-          if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCount, 20);
-          } else {
-            counter.innerText = target + '+';
-          }
-        };
-        updateCount();
-      });
-    };
-    let statsViewed = false;
-    window.addEventListener('scroll', () => {
-      const statsSection = document.querySelector('#stats');
-      const rect = statsSection.getBoundingClientRect();
-      if (!statsViewed && rect.top < window.innerHeight) {
-        statsViewed = true;
-        animateCounters();
-      }
-    });
-
-    // Scroll spy for nav highlight
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav a");
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(sec => {
-        const sectionTop = sec.offsetTop - 200;
-        if (pageYOffset >= sectionTop) {
-          current = sec.getAttribute("id");
-        }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href").includes(current)) {
-          link.classList.add("active");
-        }
-      });
-    });
-  </script>
 </body>
 </html>
