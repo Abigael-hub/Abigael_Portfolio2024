@@ -76,20 +76,25 @@
       padding-bottom: 5px;
     }
 
-    /* About */
-    .about {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .about img {
-      max-width: 180px;
-      border-radius: 50%;
-      margin-right: 2rem;
-    }
-    .about p {
-      flex: 1;
-    }
+  /* About */
+.about {
+  display: flex;
+  flex-wrap: nowrap;   /* force image + text side by side */
+  align-items: flex-start;
+}
+.about img {
+  max-width: 180px;
+  border-radius: 50%;
+  margin-right: 2rem;
+  flex-shrink: 0;
+}
+.about-text {
+  flex: 1;
+}
+.about-text p {
+  margin-bottom: 1rem;
+}
+
 
     /* Stats */
     .quick-stats {
@@ -255,7 +260,7 @@
   </div>
 
   <div class="container">
- <!-- About -->
+<!-- About -->
 <section id="about" class="about">
   <img src="images/about/may7.jpg" alt="Abigael Cherotich">
   <div class="about-text">
@@ -267,6 +272,7 @@
     </p>
   </div>
 </section>
+
 
 
     <!-- Stats -->
