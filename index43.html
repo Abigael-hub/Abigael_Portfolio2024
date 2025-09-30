@@ -10,12 +10,19 @@
       --secondary: #02393d;
       --accent: #f64c57;
       --bg: #f9f9fb;
+      --text: #333;
       --muted: #6b7280;
       --card-bg: #ffffff;
     }
+    [data-theme="dark"] {
+      --bg: #121212;
+      --text: #f0f0f0;
+      --card-bg: #1e1e1e;
+      --muted: #aaa;
+    }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-    body { background: var(--bg); color: #333; line-height: 1.6; padding-top: 100px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; transition: background 0.3s, color 0.3s; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; padding-top: 100px; transition: background 0.3s, color 0.3s; }
 
     /* Header */
     header { position: fixed; top: 0; width: 100%; background: var(--primary); color: #fff; z-index: 1000; }
@@ -25,20 +32,23 @@
     nav a { color: #fff; margin-left: 20px; text-decoration: none; font-weight: 600; transition: 0.3s; }
     nav a:hover { color: var(--accent); }
 
+    /* Theme toggle button */
+    .theme-toggle { cursor: pointer; background: var(--accent); color: #fff; border: none; padding: 6px 12px; border-radius: 5px; font-weight: 600; }
+    .theme-toggle:hover { opacity: 0.8; }
+
     .container { width: 90%; max-width: 1100px; margin: 2rem auto; }
 
-    /* Sections */
     section { margin-bottom: 3rem; }
 
     /* About */
     .about { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; }
     .about img { width: 180px; border-radius: 50%; }
     .about-text { flex: 1; }
-    .about-text p { margin-bottom: 1rem; font-size: 1rem; color: #444; }
+    .about-text p { margin-bottom: 1rem; font-size: 1rem; color: var(--text); }
 
     /* Stats */
     .quick-stats { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem; }
-    .stat { background: var(--card-bg); flex: 1 1 150px; text-align: center; padding: 1.2rem; border-radius: 10px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); }
+    .stat { background: var(--card-bg); flex: 1 1 150px; text-align: center; padding: 1.2rem; border-radius: 10px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); transition: background 0.3s, color 0.3s; }
     .stat h2 { font-size: 2rem; color: var(--accent); margin-bottom: 0.3rem; }
     .stat p { color: var(--secondary); font-weight: 500; }
 
@@ -46,11 +56,11 @@
     .tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
     .tool-category { background: var(--card-bg); padding: 1rem; border-radius: 10px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); }
     .tool-category h3 { color: var(--secondary); margin-bottom: 0.5rem; font-size: 1rem; }
-    .tool-category p { color: #444; font-size: 0.95rem; }
+    .tool-category p { color: var(--text); font-size: 0.95rem; }
 
     /* Projects */
     .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .project-card { background: var(--card-bg); padding: 1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.05); transition: transform 0.2s; display: flex; flex-direction: column; }
+    .project-card { background: var(--card-bg); padding: 1rem; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.05); transition: transform 0.2s, background 0.3s, color 0.3s; display: flex; flex-direction: column; }
     .project-card:hover { transform: translateY(-5px); }
     .project-card h3 { color: var(--secondary); margin-bottom: 0.5rem; font-size: 1.1rem; }
     .meta { font-size: 0.85rem; color: var(--muted); }
@@ -65,7 +75,7 @@
     footer { text-align: center; padding: 1rem; background: var(--secondary); color: #fff; }
   </style>
 </head>
-<body>
+<body data-theme="light">
 
 <header>
   <div class="topbar">
@@ -79,6 +89,7 @@
       <a href="#tools">Tools</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
+      <button class="theme-toggle" id="themeToggle">Toggle Theme</button>
     </nav>
   </div>
 </header>
@@ -120,28 +131,28 @@
         <h3>Retail Sales Dashboard</h3>
         <p class="meta">Power BI • SQL • Forecasting</p>
         <p>Interactive retail dashboard tracking KPIs, regional drilldowns, and short-term forecasts.</p>
-        <div class="tags"><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Forecasting</span></div>
+        <a class="contact" href="Abigael_CV.pdf" target="_blank">Download CV</a>
       </article>
 
       <article class="project-card">
         <h3>Customer Segmentation & ETL</h3>
         <p class="meta">Postgres • dbt • Airflow</p>
         <p>Automated ETL pipeline with optimized queries for customer segmentation and churn analysis.</p>
-        <div class="tags"><span class="tag">dbt</span><span class="tag">Airflow</span><span class="tag">SQL</span></div>
+        <a class="contact" href="Abigael_CV.pdf" target="_blank">Download CV</a>
       </article>
 
       <article class="project-card">
         <h3>Impact of Mobile Money</h3>
         <p class="meta">R • Stata • Quasi-Experimental</p>
         <p>DiD/PSM study on mobile money's role in financial inclusion using World Bank Findex data.</p>
-        <div class="tags"><span class="tag">R</span><span class="tag">Stata</span><span class="tag">Impact</span></div>
+        <a class="contact" href="Abigael_CV.pdf" target="_blank">Download CV</a>
       </article>
 
       <article class="project-card">
         <h3>Credit Risk Scoring</h3>
         <p class="meta">Python • XGBoost • Feature Engineering</p>
         <p>End-to-end ML model with feature importance, evaluation metrics, and deployable scoring script.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">ML</span></div>
+        <a class="contact" href="Abigael_CV.pdf" target="_blank">Download CV</a>
       </article>
     </div>
   </section>
@@ -161,6 +172,7 @@
 </footer>
 
 <script>
+  // Counter animation
   const counters = document.querySelectorAll('.counter');
   const speed = 200;
   const animateCounters = () => {
@@ -169,10 +181,8 @@
         const target = +counter.getAttribute('data-target');
         const count = +counter.innerText;
         const increment = target / speed;
-        if (count < target) {
-          counter.innerText = Math.ceil(count + increment);
-          setTimeout(updateCount, 20);
-        } else { counter.innerText = target + '+'; }
+        if (count < target) { counter.innerText = Math.ceil(count + increment); setTimeout(updateCount, 20); }
+        else { counter.innerText = target + '+'; }
       };
       updateCount();
     });
@@ -180,12 +190,15 @@
   let statsViewed = false;
   window.addEventListener('scroll', () => {
     const statsSection = document.querySelector('#stats');
-    if (!statsViewed && statsSection.getBoundingClientRect().top < window.innerHeight) {
-      statsViewed = true;
-      animateCounters();
-    }
+    if (!statsViewed && statsSection.getBoundingClientRect().top < window.innerHeight) { statsViewed = true; animateCounters(); }
+  });
+
+  // Theme toggle
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', () => {
+    const body = document.body;
+    body.dataset.theme = body.dataset.theme === 'light' ? 'dark' : 'light';
   });
 </script>
-
 </body>
 </html>
