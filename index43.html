@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abigael Cherotich | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #016064;
@@ -15,55 +15,67 @@
       --card-bg: #fff;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
 
     body { background: var(--bg); color: var(--text); line-height: 1.6; }
 
     a { text-decoration: none; color: var(--accent); }
 
     header {
-      background: var(--primary);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(1, 96, 100, 0.9);
       color: #fff;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      z-index: 1000;
     }
 
-    header h1 { font-size: 1.5rem; }
-
-    nav a { margin-left: 1rem; color: #fff; font-weight: 500; }
+    header h1 { font-size: 1.5rem; font-weight: 700; }
+    nav a { margin-left: 1.5rem; color: #fff; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: var(--accent); }
 
     .hero {
+      position: relative;
+      height: 80vh;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 6rem 2rem;
-      background: var(--secondary);
       color: #fff;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     }
 
-    .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.2rem; max-width: 600px; }
+    .hero h2 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.3rem; max-width: 600px; margin: 0 auto; }
 
-    section { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
+    section { padding: 6rem 2rem; max-width: 1200px; margin: auto; position: relative; }
 
     .about {
       display: flex;
       align-items: center;
       gap: 2rem;
       flex-wrap: wrap;
+      margin-top: -100px;
     }
 
-    .about img { width: 300px; border-radius: 10px; }
+    .about img {
+      width: 300px;
+      border-radius: 50%;
+      border: 6px solid #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      object-fit: cover;
+    }
 
     .about-content { flex: 1; }
 
-    .about-content h2 { color: var(--primary); margin-bottom: 1rem; }
-    .about-content p { margin-bottom: 1rem; }
-
+    .about-content h2 { color: var(--primary); margin-bottom: 1rem; font-size: 2rem; }
+    .about-content p { margin-bottom: 1rem; font-size: 1.1rem; }
     .download-btn {
       display: inline-block;
       padding: 0.6rem 1.2rem;
@@ -73,7 +85,6 @@
       font-weight: 600;
       transition: 0.3s;
     }
-
     .download-btn:hover { background: #c43a47; }
 
     .projects {
@@ -85,14 +96,16 @@
     .project-card {
       background: var(--card-bg);
       padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
 
-    .project-card:hover { transform: translateY(-5px); }
-
-    .project-card h3 { margin-bottom: 0.5rem; color: var(--primary); }
+    .project-card h3 { margin-bottom: 0.5rem; color: var(--primary); font-size: 1.3rem; }
     .project-card p { margin-bottom: 1rem; }
     .project-card a { font-weight: 600; }
 
@@ -125,6 +138,11 @@
     .contact button:hover { background: var(--accent); }
 
     footer { text-align: center; padding: 2rem; background: var(--secondary); color: #fff; }
+
+    @media(max-width:768px){
+      .about { flex-direction: column; text-align: center; }
+      .about img { margin-bottom: 1.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -139,16 +157,18 @@
   </header>
 
   <section class="hero">
-    <h2>Data Analyst & Visualization Enthusiast</h2>
-    <p>Transforming data into actionable insights and meaningful stories through visualization, analysis, and interpretation.</p>
+    <div>
+      <h2>Data Analyst & Visualization Enthusiast</h2>
+      <p>Transforming complex data into actionable insights through dashboards, visualizations, and analysis.</p>
+    </div>
   </section>
 
   <section id="about" class="about">
     <img src="profile.jpg" alt="Abigael Cherotich">
     <div class="about-content">
       <h2>About Me</h2>
-      <p>I am a passionate data analyst with expertise in Python, SQL, Power BI, and Excel. I enjoy solving complex problems and translating data into actionable insights.</p>
-      <p>With experience in financial analysis, reporting, and dashboard creation, I bring data to life for decision-making.</p>
+      <p>I am a passionate data analyst with expertise in Python, SQL, Power BI, and Excel. I enjoy turning raw data into meaningful insights that drive business decisions.</p>
+      <p>Experienced in financial analysis, reporting, and interactive dashboards, I bring data stories to life.</p>
       <a href="Abigael_Cherotich_CV.pdf" class="download-btn" download>Download CV</a>
     </div>
   </section>
