@@ -5,28 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abigael Cherotich | Portfolio</title>
   <style>
+    /* Root Colors */
     :root {
       --primary: #016064;
+      --secondary: #02393d;
       --accent: #f64c57;
       --bg: #ffffff;
-      --text: #111;
-      --muted: #555;
-      --section-bg: #f9f9f9;
+      --muted: #555555;
+      --section-bg: #f7f7f7;
     }
 
+    /* Global */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
 
     body {
       background: var(--bg);
-      color: var(--text);
+      color: var(--secondary);
       line-height: 1.6;
-      scroll-behavior: smooth;
-      padding-top: 80px; /* offset for fixed header */
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--secondary);
+    }
+    a:hover {
+      color: var(--accent);
     }
 
     /* Header */
@@ -34,237 +42,202 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: var(--bg);
-      border-bottom: 1px solid #eee;
-      z-index: 1000;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: var(--bg);
+      border-bottom: 1px solid #e0e0e0;
+      z-index: 1000;
     }
-
-    header .branding h1 {
-      font-size: 1.8rem;
-      color: var(--primary);
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
     }
-
     nav a {
       margin-left: 2rem;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 600;
-      font-size: 0.95rem;
+      font-weight: 500;
     }
 
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    /* Sections */
-    .container {
-      width: 90%;
-      max-width: 1100px;
+    /* Hero / About */
+    .hero {
+      padding: 140px 20px 60px 20px;
+      max-width: 900px;
       margin: 0 auto;
+      text-align: center;
     }
-
-    section {
-      padding: 6rem 0 4rem;
+    .hero img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
     }
-
-    h2 {
-      font-size: 1.8rem;
+    .hero h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
       color: var(--primary);
-      margin-bottom: 1rem;
-      position: relative;
     }
-
-    h2::after {
-      content: '';
-      display: block;
-      width: 50px;
-      height: 3px;
-      background: var(--accent);
-      margin-top: 5px;
-      border-radius: 2px;
-    }
-
-    p {
-      color: var(--muted);
+    .hero p {
       font-size: 1rem;
-      margin-bottom: 1rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 1rem auto;
     }
-
-    /* About */
-    .about {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: center;
+    .hero a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 10px 20px;
+      border: 1px solid var(--primary);
+      border-radius: 5px;
+      color: var(--primary);
+      font-weight: 600;
     }
-
-    .about img {
-      border-radius: 10px;
-      max-width: 280px;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .about-text {
-      flex: 1;
-    }
-
-    .about-text p {
-      font-size: 1.05rem;
-      color: var(--text);
+    .hero a:hover {
+      background: var(--primary);
+      color: #fff;
     }
 
     /* Stats */
     .stats {
       display: flex;
-      gap: 2rem;
       justify-content: space-around;
-      background: var(--section-bg);
-      padding: 3rem 2rem;
-      border-radius: 10px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      flex-wrap: wrap;
+      padding: 3rem 1rem;
+      background: var(--section-bg);
     }
-
-    .stats .stat h3 {
+    .stat {
+      flex: 1;
+      max-width: 180px;
+    }
+    .stat h3 {
       font-size: 2rem;
+      font-weight: 700;
       color: var(--accent);
       margin-bottom: 0.5rem;
     }
-
-    .stats .stat p {
-      font-size: 1rem;
-      color: var(--text);
-    }
-
-    /* Toolset */
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .tool {
-      background: var(--section-bg);
-      padding: 1.5rem;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .tool h3 {
-      font-size: 1.1rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .tool p {
-      color: var(--muted);
+    .stat p {
       font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* Tools */
+    .tools {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .tools h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+    .tool-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .tool {
+      flex: 1;
+      min-width: 150px;
+      background: var(--section-bg);
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      text-align: center;
+      color: var(--secondary);
     }
 
     /* Projects */
-    .projects-grid {
+    .projects {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .projects h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+    .project-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: 1fr;
       gap: 1.5rem;
     }
-
     .project {
-      background: var(--section-bg);
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding: 1.2rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
     }
-
-    .project h4 {
+    .project h3 {
       font-size: 1.2rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    .project p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: auto;
-    }
-
-    .tag {
-      font-size: 0.8rem;
-      background: #eee;
-      padding: 0.3rem 0.6rem;
-      border-radius: 999px;
-      color: var(--text);
-    }
-
-    .project a {
-      margin-top: 1rem;
-      display: inline-block;
-      padding: 0.6rem 1rem;
-      border-radius: 5px;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.9rem;
       font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: var(--secondary);
     }
-
+    .project p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .project a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+      border-bottom: 1px solid transparent;
+    }
     .project a:hover {
-      background: var(--primary);
+      border-bottom: 1px solid var(--primary);
     }
 
     /* Contact */
     .contact {
+      padding: 3rem 1rem;
       text-align: center;
+      background: var(--section-bg);
     }
-
+    .contact h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
     .contact a {
       display: inline-block;
-      margin: 0.5rem;
-      padding: 0.7rem 1.5rem;
+      margin: 0.5rem 1rem;
+      padding: 10px 20px;
+      border: 1px solid var(--primary);
       border-radius: 5px;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
       font-weight: 600;
+      color: var(--primary);
     }
-
     .contact a:hover {
       background: var(--primary);
+      color: #fff;
     }
 
     /* Footer */
     footer {
+      padding: 2rem 1rem;
       text-align: center;
-      padding: 2rem;
-      color: var(--muted);
       font-size: 0.9rem;
+      color: var(--muted);
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
-      .about {
-        flex-direction: column;
-        text-align: center;
+    @media(min-width: 768px){
+      .project-list {
+        grid-template-columns: repeat(2, 1fr);
       }
-
-      .about img {
-        margin: 0 auto;
+      .tool-list {
+        justify-content: space-between;
+      }
+    }
+    @media(min-width: 1024px){
+      .project-list {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   </style>
@@ -273,97 +246,93 @@
 
   <!-- Header -->
   <header>
-    <div class="branding">
-      <h1>Abigael Cherotich</h1>
-    </div>
+    <h1>Abigael Cherotich</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#stats">Stats</a>
       <a href="#tools">Tools</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
-      <a href="Abigael_CV.pdf" download>Download CV</a>
     </nav>
   </header>
 
-  <div class="container">
-    <!-- About -->
-    <section id="about" class="about">
-      <img src="images/about/may7.jpg" alt="Abigael Cherotich">
-      <div class="about-text">
-        <p>
-          I am a senior research and BI/data analyst with over five years of experience supporting corporates, businesses, and international NGOs in market research, social research, and product analysis.
-        </p>
-        <p>
-          I specialize in advanced SQL, Python, R, cloud platforms, and BI tools to deliver actionable insights, real-time dashboards, and data-driven solutions.
-        </p>
+  <!-- Hero / About -->
+  <section class="hero" id="about">
+    <img src="images/about/may7.jpg" alt="Abigael Cherotich">
+    <h2>Senior Research & BI/Data Analyst</h2>
+    <p>I help organizations turn complex data into actionable insights through research, dashboards, and scalable analytics solutions.</p>
+    <a href="Abigael_CV.pdf" target="_blank">Download CV</a>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats" id="stats">
+    <div class="stat">
+      <h3>5+</h3>
+      <p>Years Experience</p>
+    </div>
+    <div class="stat">
+      <h3>50+</h3>
+      <p>Dashboards Built</p>
+    </div>
+    <div class="stat">
+      <h3>20+</h3>
+      <p>Projects Completed</p>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="tools" id="tools">
+    <h2>Toolset</h2>
+    <div class="tool-list">
+      <div class="tool">SPSS | Python | RStudio | STATA | SQL | RShiny</div>
+      <div class="tool">Power BI | Tableau | Looker | Looker Studio | Excel</div>
+      <div class="tool">Snowflake | AWS (Redshift, S3) | Google Cloud (BigQuery)</div>
+      <div class="tool">Apache Airflow | Apache Kafka | Git</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <h3>Retail Sales Dashboard</h3>
+        <p>Power BI • SQL • Forecasting</p>
+        <p>Interactive retail dashboard tracking KPIs, regional drilldowns, and short-term forecasts.</p>
+        <a href="#">View Dashboard</a>
       </div>
-    </section>
-
-    <!-- Stats -->
-    <section id="stats" class="stats">
-      <div class="stat"><h3>5+</h3><p>Years Experience</p></div>
-      <div class="stat"><h3>50+</h3><p>Dashboards Built</p></div>
-      <div class="stat"><h3>20+</h3><p>Projects Completed</p></div>
-    </section>
-
-    <!-- Tools -->
-    <section id="tools">
-      <h2>Toolset</h2>
-      <div class="tools-grid">
-        <div class="tool"><h3>Statistical & Programming</h3><p>SPSS | Python | RStudio | STATA | SQL | RShiny</p></div>
-        <div class="tool"><h3>BI & Visualization</h3><p>Power BI | RShiny | Tableau | Looker | Looker Studio | Excel</p></div>
-        <div class="tool"><h3>Cloud Platforms</h3><p>Snowflake | AWS (Redshift, S3) | Google Cloud (BigQuery)</p></div>
-        <div class="tool"><h3>Data Engineering</h3><p>Apache Airflow | Apache Kafka | Git</p></div>
+      <div class="project">
+        <h3>Customer Segmentation & ETL</h3>
+        <p>Postgres • dbt • Airflow</p>
+        <p>Automated ETL pipeline with optimized queries for customer segmentation and churn analysis.</p>
+        <a href="#">Docs</a>
       </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="project">
-          <h4>Retail Sales Dashboard</h4>
-          <p>Power BI • SQL • Forecasting</p>
-          <p>Interactive retail dashboard tracking KPIs, regional drilldowns, and short-term forecasts.</p>
-          <div class="tags"><span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Forecasting</span></div>
-          <a href="#">View Project</a>
-        </div>
-        <div class="project">
-          <h4>Customer Segmentation & ETL</h4>
-          <p>Postgres • dbt • Airflow</p>
-          <p>Automated ETL pipeline with optimized queries for customer segmentation and churn analysis.</p>
-          <div class="tags"><span class="tag">dbt</span><span class="tag">Airflow</span><span class="tag">SQL</span></div>
-          <a href="#">View Project</a>
-        </div>
-        <div class="project">
-          <h4>Impact of Mobile Money</h4>
-          <p>R • Stata • Quasi-Experimental</p>
-          <p>DiD/PSM study on mobile money's role in financial inclusion using World Bank Findex data.</p>
-          <div class="tags"><span class="tag">Impact</span><span class="tag">R</span><span class="tag">Stata</span></div>
-          <a href="#">View Project</a>
-        </div>
-        <div class="project">
-          <h4>Credit Risk Scoring</h4>
-          <p>Python • XGBoost • Feature Engineering</p>
-          <p>End-to-end ML model with feature importance, evaluation metrics, and deployable scoring script.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">ML</span></div>
-          <a href="#">View Project</a>
-        </div>
+      <div class="project">
+        <h3>Impact of Mobile Money</h3>
+        <p>R • Stata • Quasi-Experimental</p>
+        <p>DiD/PSM study on mobile money's role in financial inclusion using World Bank Findex data.</p>
+        <a href="#">Read Report</a>
       </div>
-    </section>
+      <div class="project">
+        <h3>Credit Risk Scoring</h3>
+        <p>Python • XGBoost • Feature Engineering</p>
+        <p>End-to-end ML model with feature importance, evaluation metrics, and deployable scoring script.</p>
+        <a href="#">Notebook</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <a href="mailto:abigaelcherotich867@gmail.com">Email Me</a>
-      <a href="https://linkedin.com/in/abigael-cherotich" target="_blank">LinkedIn</a>
-      <a href="Abigael_CV.pdf" download>Download CV</a>
-    </section>
-  </div>
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <a href="mailto:abigaelcherotich867@gmail.com">Email Me</a>
+    <a href="https://linkedin.com/in/abigael-cherotich" target="_blank">LinkedIn</a>
+    <a href="Abigael_CV.pdf" target="_blank">Download CV</a>
+  </section>
 
   <footer>
     &copy; 2025 Abigael Cherotich | Portfolio
   </footer>
+
 </body>
 </html>
