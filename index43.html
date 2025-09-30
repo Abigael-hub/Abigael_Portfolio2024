@@ -4,208 +4,256 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abigael Cherotich | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #016064;
-      --secondary: #02393d;
-      --accent: #f64c57;
-      --bg: #f9f9f9;
-      --text: #111;
-      --card-bg: #fff;
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    body {
+      font-family: 'Helvetica', sans-serif;
+      color: #02393d;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
 
-    body { background: var(--bg); color: var(--text); line-height: 1.6; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    a { text-decoration: none; color: var(--accent); }
-
+    /* Header / Navbar */
     header {
-      position: fixed;
-      width: 100%;
+      background: #016064;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
       top: 0;
-      left: 0;
-      background: rgba(1, 96, 100, 0.9);
-      color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       z-index: 1000;
     }
 
-    header h1 { font-size: 1.5rem; font-weight: 700; }
-    nav a { margin-left: 1.5rem; color: #fff; font-weight: 500; transition: 0.3s; }
-    nav a:hover { color: var(--accent); }
-
-    .hero {
-      position: relative;
-      height: 80vh;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    header nav ul {
+      list-style: none;
       display: flex;
       justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    }
-
-    .hero h2 { font-size: 3rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.3rem; max-width: 600px; margin: 0 auto; }
-
-    section { padding: 6rem 2rem; max-width: 1200px; margin: auto; position: relative; }
-
-    .about {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
       flex-wrap: wrap;
-      margin-top: -100px;
+      gap: 20px;
     }
 
-    .about img {
-      width: 300px;
-      border-radius: 50%;
-      border: 6px solid #fff;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      object-fit: cover;
+    header nav ul li a {
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s;
     }
 
-    .about-content { flex: 1; }
+    header nav ul li a:hover {
+      color: #f64c57;
+    }
 
-    .about-content h2 { color: var(--primary); margin-bottom: 1rem; font-size: 2rem; }
-    .about-content p { margin-bottom: 1rem; font-size: 1.1rem; }
-    .download-btn {
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      background: var(--accent);
+    /* Hero Section */
+    #hero {
+      text-align: center;
+      padding: 100px 20px;
+      background-color: #f0f4f4;
+    }
+
+    #hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-btn {
+      padding: 12px 25px;
+      background-color: #016064;
       color: #fff;
       border-radius: 5px;
-      font-weight: 600;
-      transition: 0.3s;
+      font-weight: bold;
+      transition: background 0.3s;
     }
-    .download-btn:hover { background: #c43a47; }
 
-    .projects {
+    .hero-btn:hover {
+      background-color: #02393d;
+    }
+
+    /* About Section */
+    #about {
+      padding: 80px 20px;
+      background-color: #fff;
+    }
+
+    .about-container {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .about-container img {
+      width: 250px;
+      border-radius: 10px;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    /* Projects Section */
+    #projects {
+      padding: 80px 20px;
+      background-color: #f0f4f4;
+      text-align: center;
+    }
+
+    #projects h2 {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+    }
+
+    .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .project-card {
-      background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .project-card:hover { 
-      transform: translateY(-5px); 
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
 
-    .project-card h3 { margin-bottom: 0.5rem; color: var(--primary); font-size: 1.3rem; }
-    .project-card p { margin-bottom: 1rem; }
-    .project-card a { font-weight: 600; }
-
-    .contact form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 500px;
-      margin: auto;
+    .project-card:hover {
+      transform: translateY(-10px);
     }
 
-    .contact input, .contact textarea {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    .project-card img {
+      width: 100%;
+    }
+
+    .project-card h3 {
+      padding: 15px 20px 0;
+    }
+
+    .project-card p {
+      padding: 10px 20px 20px;
       font-size: 1rem;
     }
 
-    .contact button {
-      padding: 0.8rem;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s;
+    /* Contact Section */
+    #contact {
+      padding: 80px 20px;
+      background-color: #fff;
+      text-align: center;
     }
 
-    .contact button:hover { background: var(--accent); }
+    #contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
 
-    footer { text-align: center; padding: 2rem; background: var(--secondary); color: #fff; }
+    #contact p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
 
-    @media(max-width:768px){
-      .about { flex-direction: column; text-align: center; }
-      .about img { margin-bottom: 1.5rem; }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #016064;
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-container img {
+        margin-bottom: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header / Navbar -->
   <header>
-    <h1>Abigael Cherotich</h1>
     <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="assets/Abigael_Cherotich_CV.pdf" download>Download CV</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section class="hero">
-    <div>
-      <h2>Data Analyst & Visualization Enthusiast</h2>
-      <p>Transforming complex data into actionable insights through dashboards, visualizations, and analysis.</p>
+  <!-- Hero Section -->
+  <section id="hero">
+    <h1>Hello, I'm Abigael Cherotich</h1>
+    <p>Data Analyst | Financial Analyst | Problem Solver</p>
+    <a href="assets/Abigael_Cherotich_CV.pdf" download class="hero-btn">Download CV</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about-container">
+      <img src="images/profile.jpg" alt="Abigael Cherotich">
+      <div class="about-text">
+        <p>I am a data and financial analyst with experience in performing quantitative analysis, forecasting, and visualization. I enjoy turning complex data into actionable insights.</p>
+        <p>My expertise spans Excel, SQL, Python, Power BI, and data-driven decision-making. I have worked with educational institutes, hospitals, and international projects to deliver high-quality analytical reports.</p>
+      </div>
     </div>
   </section>
 
-  <section id="about" class="about">
-    <img src="profile.jpg" alt="Abigael Cherotich">
-    <div class="about-content">
-      <h2>About Me</h2>
-      <p>I am a passionate data analyst with expertise in Python, SQL, Power BI, and Excel. I enjoy turning raw data into meaningful insights that drive business decisions.</p>
-      <p>Experienced in financial analysis, reporting, and interactive dashboards, I bring data stories to life.</p>
-      <a href="Abigael_Cherotich_CV.pdf" class="download-btn" download>Download CV</a>
-    </div>
-  </section>
-
+  <!-- Projects Section -->
   <section id="projects">
-    <h2 style="text-align:center; color:var(--primary); margin-bottom:2rem;">Projects</h2>
-    <div class="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
       <div class="project-card">
-        <h3>Churn Predictive Model</h3>
-        <p>Developed a predictive model to identify customers likely to churn using Random Forest algorithms.</p>
-        <a href="#">View Project</a>
+        <img src="images/project1.jpg" alt="Project 1">
+        <h3>Project 1</h3>
+        <p>Analyzed student attendance and learning outcomes for a school feeding program, generating detailed reports and dashboards.</p>
       </div>
       <div class="project-card">
-        <h3>Sales Dashboard Automation</h3>
-        <p>Created automated dashboards in Power BI to visualize sales performance and track KPIs.</p>
-        <a href="#">View Project</a>
+        <img src="images/project2.jpg" alt="Project 2">
+        <h3>Project 2</h3>
+        <p>Created a financial forecasting model for a food business, integrating walk-in sales and office client deliveries using Power BI and Excel.</p>
       </div>
-      <div class="project-card">
-        <h3>Data Cleaning & Analysis</h3>
-        <p>Implemented data cleaning pipelines in Python and SQL to prepare datasets for analysis.</p>
-        <a href="#">View Project</a>
-      </div>
+      <!-- Add more projects here -->
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <h2 style="text-align:center; color:var(--primary); margin-bottom:2rem;">Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:abigael@example.com">abigael@example.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/abigaelcherotich/" target="_blank">linkedin.com/in/abigaelcherotich</a></p>
+    <p>GitHub: <a href="https://github.com/abigael" target="_blank">github.com/abigael</a></p>
   </section>
 
   <footer>
-    &copy; 2025 Abigael Cherotich. All rights reserved.
+    <p>&copy; 2025 Abigael Cherotich</p>
   </footer>
 
 </body>
