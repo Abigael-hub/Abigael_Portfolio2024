@@ -1,189 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abigael Cherotich | Portfolio</title>
-  <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abigael Cherotich | Portfolio</title>
+<style>
+/* ===== General ===== */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  color: #111;
+  background: #fff;
+}
 
-    body {
-      font-family: 'Helvetica', sans-serif;
-      color: #02393d;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
+a { text-decoration: none; color: inherit; }
 
-    a { color: inherit; text-decoration: none; }
+/* ===== Sidebar ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  z-index: 100;
+}
 
-    /* Header */
-    header {
-      background: #016064;
-      padding: 20px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+.sidebar .logo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
 
-    header nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
-    header nav ul li a {
-      color: #fff;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+.sidebar-links a {
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s;
+}
 
-    header nav ul li a:hover { color: #f64c57; }
+.sidebar-links a:hover { color: #3b82f6; }
 
-    /* Hero */
-    #hero {
-      text-align: center;
-      padding: 100px 20px;
-      background-color: #f0f4f4;
-    }
+/* ===== Main Content ===== */
+.main-content { margin-left: 220px; }
 
-    #hero h1 { font-size: 3rem; margin-bottom: 20px; }
-    #hero p { font-size: 1.2rem; margin-bottom: 30px; }
+/* ===== Hero ===== */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: #fff;
+  position: relative;
+}
 
-    .hero-btn {
-      padding: 12px 25px;
-      background-color: #016064;
-      color: #fff;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #facc15, #3b82f6, #f472b6);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 4s ease infinite;
+}
 
-    .hero-btn:hover { background-color: #02393d; }
+@keyframes gradientMove {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
 
-    /* About */
-    #about { padding: 80px 20px; background-color: #fff; }
+.subheading { font-size: 1.5rem; margin-bottom: 2rem; }
 
-    .about-container {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      flex-wrap: wrap;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+.btn {
+  padding: 0.8rem 1.5rem;
+  background: #fff;
+  color: #3b82f6;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}
 
-    .about-container img {
-      width: 250px;
-      border-radius: 10px;
-    }
+.btn:hover { background: #e0e7ff; }
 
-    .about-text { flex: 1; }
-    .about-text p { margin-bottom: 20px; font-size: 1.1rem; }
+.hero-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  object-fit: cover;
+}
 
-    /* Projects */
-    #projects { padding: 80px 20px; background-color: #f0f4f4; text-align: center; }
-    #projects h2 { font-size: 2.5rem; margin-bottom: 50px; }
+/* Scroll Arrow */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+}
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+.scroll-down::after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  margin: 5px auto;
+  background: #fff;
+  border-radius: 50%;
+  animation: bounce 2s infinite;
+}
 
-    .project-card {
-      background-color: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(10px); }
+  60% { transform: translateY(5px); }
+}
 
-    .project-card:hover { transform: translateY(-10px); }
-    .project-card img { width: 100%; }
-    .project-card h3 { padding: 15px 20px 0; }
-    .project-card p { padding: 10px 20px 20px; }
+/* ===== Projects ===== */
+.projects {
+  padding: 6rem 2rem;
+  text-align: center;
+}
 
-    /* Contact */
-    #contact { padding: 80px 20px; background-color: #fff; text-align: center; }
-    #contact h2 { font-size: 2.5rem; margin-bottom: 30px; }
-    #contact p { margin-bottom: 15px; font-size: 1.1rem; }
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
 
-    /* Footer */
-    footer { text-align: center; padding: 20px; background: #016064; color: white; }
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .about-container { flex-direction: column; text-align: center; }
-      .about-container img { margin-bottom: 20px; }
-    }
-  </style>
+@media(min-width: 768px) { .project-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(min-width: 1024px) { .project-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+
+.project-card img { width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s; }
+.project-card:hover img { transform: scale(1.05); }
+
+.project-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 1rem;
+  text-align: center;
+}
+
+.project-card:hover .project-overlay { opacity: 1; }
+
+.project-overlay h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.project-overlay p { font-size: 1rem; margin-bottom: 1rem; }
+.project-link { padding: 0.5rem 1rem; border: 1px solid #fff; border-radius: 0.5rem; }
+
+/* Fade-in animation */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-in.show { opacity: 1; transform: translateY(0); }
+
+/* ===== Contact ===== */
+.contact {
+  padding: 6rem 2rem;
+  background: #f3f4f6;
+  text-align: center;
+}
+
+.contact a { color: #3b82f6; }
+
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ===== Responsive ===== */
+@media(max-width: 768px) {
+  .sidebar { position: relative; width: 100%; height: auto; flex-direction: row; justify-content: space-between; padding: 1rem; }
+  .sidebar-links { flex-direction: row; gap: 1rem; }
+  .main-content { margin-left: 0; }
+}
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="assets/Abigael_Cherotich_CV.pdf" download>Download CV</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- Sidebar -->
+<nav class="sidebar">
+  <h1 class="logo">Abigael</h1>
+  <ul class="sidebar-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="main-content">
 
   <!-- Hero -->
-  <section id="hero">
-    <h1>Hello, I'm Abigael Cherotich</h1>
-    <p>Data Analyst | Financial Analyst | Problem Solver</p>
-    <a href="assets/Abigael_Cherotich_CV.pdf" download class="hero-btn">Download CV</a>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <div class="about-container">
-      <img src="images/profile.jpg" alt="Abigael Cherotich">
-      <div class="about-text">
-        <p>I am a data and financial analyst with experience in quantitative analysis, forecasting, and visualization. I enjoy turning complex data into actionable insights.</p>
-        <p>My expertise spans Excel, SQL, Python, Power BI, and data-driven decision-making. I have worked with educational institutes, hospitals, and international projects to deliver high-quality analytical reports.</p>
-      </div>
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Hi, I'm Abigael</h1>
+      <p class="subheading">Data Analyst & Problem Solver</p>
+      <a href="#projects" class="btn">View Projects</a>
     </div>
+    <img src="images/profile.jpg" alt="Profile" class="hero-img">
+    <div class="scroll-down"></div>
   </section>
 
   <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
+  <section id="projects" class="projects">
+    <h2 class="section-title">My Projects</h2>
     <div class="project-grid">
-      <div class="project-card">
+      <div class="project-card fade-in">
         <img src="images/project1.jpg" alt="Project 1">
-        <h3>Project 1</h3>
-        <p>Analyzed student attendance and learning outcomes for a school feeding program, generating detailed reports and dashboards.</p>
+        <div class="project-overlay">
+          <h3>Project One</h3>
+          <p>Short description goes here.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
       </div>
-      <div class="project-card">
+      <div class="project-card fade-in">
         <img src="images/project2.jpg" alt="Project 2">
-        <h3>Project 2</h3>
-        <p>Created a financial forecasting model for a food business, integrating walk-in sales and office client deliveries using Power BI and Excel.</p>
+        <div class="project-overlay">
+          <h3>Project Two</h3>
+          <p>Short description goes here.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:abigael@example.com">abigael@example.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/abigaelcherotich/" target="_blank">linkedin.com/in/abigaelcherotich</a></p>
-    <p>GitHub: <a href="https://github.com/abigael" target="_blank">github.com/abigael</a></p>
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    <div class="social-links">
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Abigael Cherotich</p>
-  </footer>
+  <!-- Footer -->
+  <footer>&copy; 2025 Abigael Cherotich</footer>
+</div>
+
+<script>
+// Fade-in animation on scroll
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.2 };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(!entry.isIntersecting) return;
+    entry.target.classList.add('show');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
 
 </body>
 </html>
